@@ -1,9 +1,31 @@
-{% extends 'base.html' %}
-
-{% block title %}
-    Login
-{% endblock %}
-
-{% block header %}
-    <h1>Login</h1>
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>BEM-VINDO</h1>
+            <p class="subtitle">Faça o login para continuar</p>
+            
+            <form action="{% url 'usuario_login' %}" method="post">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                
+                <button type="submit" class="btn-principal">Entrar</button>
+                
+                <div class="divider"></div>
+                
+                <p class="link-texto">Não tem conta?</p>
+                <a href="{% url 'usuario_cadastrar' %}" class="btn-secundario">Criar Conta</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

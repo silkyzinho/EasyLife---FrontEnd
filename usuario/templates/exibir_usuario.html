@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
+    <style>
+        .profile-container {
+            width: 100%;
+            max-width: 500px;
+            text-align: left;
+        }
+        .profile-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .profile-box h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .profile-info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .profile-info strong {
+            color: #212121;
+        }
+        .text-muted {
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-box">
+        <h1>Meu Perfil</h1>
+
+        <div class="profile-info">
+            <p><strong>Usuário:</strong> {{ user.username }}</p>
+            
+            <p>
+                <strong>Email:</strong> 
+                {% if user.email %}
+                    {{ user.email }}
+                {% else %}
+                    <span class="text-muted">Não informado</span>
+                {% endif %}
+            </p>
+
+            <p>
+                <strong>Nome:</strong> 
+                {% if user.first_name %}
+                    {{ user.first_name }}
+                {% else %}
+                    <span class="text-muted">Não informado</span>
+                {% endif %}
+            </p>
+
+            <p>
+                <strong>Sobrenome:</strong> 
+                {% if user.last_name %}
+                    {{ user.last_name }}
+                {% else %}
+                    <span class="text-muted">Não informado</span>
+                {% endif %}
+            </p>
+
+            <p><strong>Na plataforma desde:</strong> {{ user.date_joined|date:"d/m/Y" }}</p>
+            
+            <p><strong>Último login:</strong> {{ user.last_login|date:"d/m/Y à\s H:i" }}</p>
+        </div>
+
+        <br>
+        <a href="{% url 'home.html' %}" class="btn-secundario" style="text-align: center;">Voltar para a Home</a>
+
+    </div>
+</div>
+
+</body>
+</html>

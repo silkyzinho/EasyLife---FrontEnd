@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block head}
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>CRIAR CONTA</h1>
+            <p class="subtitle">Preencha os campos para se registrar</p>
+            
+            <form action="{% url 'usuario_cadastrar' %}" method="post">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                
+                <button type="submit" class="btn-principal">Cadastrar</button>
+                
+                <div class="divider"></div>
+                
+                <p class="link-texto">Já tem uma conta?</p>
+                <a href="{% url 'usuario_login' %}" class="btn-secundario">Fazer Login</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

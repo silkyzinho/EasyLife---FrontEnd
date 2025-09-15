@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages  #framework de mensagens
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.contrib.auth import logout
+from .forms import LoginForm, CadastrarForm
+from .models import Usuario, Plano
+from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.shortcuts import render, redirect, get_object_or_404
 
 def home_view(request):
     return render(request, 'home.html')
@@ -10,44 +15,79 @@ def home_view(request):
 # usuario
 
 def cadastrar(request):
-    if request.method == 'POST':  # se o usuário enviou o formulário
-        username = request.POST.get('username')
-        picture = request.POST.get('picture')
-        salario = request.POST.get('salario')
-        password1 = request.POST.get('password1')
-        password2 = request.POST.get('password2')
+    if request.method == 'POST':
+        form = CadastrarForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            role = form.cleaned_data['role']
 
-        if password1 != password2:          # se as duas senhas sao diferentes
-            messages.error(request, "As senhas não conferem.")
-        else:            # Cria o novo usuário no banco de dados
-            user = User.objects.create_user(username=username, picture=picture, salario=salario, password=password1)
-            usuario = Usuario.objects.create(user=user)
-            user.save()
+            user = User.objects.create_user(username=username, password=password)
 
+            usuario = Usuario.objects.create(user=user, role=role)
+
+            return redirect('') 
+    else:
+        form = CadastrarForm()
+    return render(request, 'cadastrar.html')
+
+
+@csrf_exempt  #  REMOVER DA PRODUCAO
 def login(request):
-    return render(request, 'login.html')
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                    return JsonResponse({'success': True, 'message': 'Login realizado com sucesso!'})
 
-def exibir_usuario(request):
-    
-    return render(request, 'exibir.html')
+                messages.success(request, 'Login realizado com sucesso!')
+                return redirect('')
+    else:
+        messages.error(request, 'nome ou senha inválidos.')
+        form = LoginForm()
 
+    return render(request, 'login.html', {'form': form})
+
+@login_required
+def exibir_usuario(request, id=None):
+    usuario = get_object_or_404(Usuario, id=id)
+    usuario = {
+        "user": Usuario.user,
+        "plano": Usuario.plano,
+        "picture": Usuario.picture,
+    }
+    return render(request, 'exibir_usuario.html', usuario)
+
+@login_required
 def editar_usuario(request):
     pass
 
+@login_required
 def excluir_usuario(request):
-    return redirect('usuario_login')
+    user = request.user
 
+    if request.method == 'POST':
+        user.delete()          # apaga o usuário do banco
+        logout(request)        # encerra a sessão
+        return redirect('')  # volta para tela de login
+
+@login_required
 def logout(request):
-    logout()
-    return redirect('usuario_login')
+    logout(request)
+    return redirect('home')
 
 # plano
 
 def criar_plano(request):
-    return render(request, 'criar_plano')
+    pass
 
 def exibir_plano(request):
-    return render(request, 'exibir_plano')
+    pass
 
 def excluir_plano(request):
-    return redirect('criar_plano')
+    pass
