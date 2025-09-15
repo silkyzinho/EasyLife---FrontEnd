@@ -6,7 +6,7 @@
 }
 
 .login-container {
-    background: rgb(144, 238, 144);
+    background: rgb(74, 163, 74);
 }
 
 .header {
@@ -18,7 +18,7 @@
 
 .header a, .header p {
     font-size: 1.1em;
-    color: #333;
+    color: #b8b8b8;
     text-decoration: none;
 }
 

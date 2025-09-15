@@ -1,16 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    {% block head}
+    {% block header %}
     <title>Criar Conta</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
+    {% endblock %}
+
 <body>
     <div class="login-container">
         <div class="login-box">
+
+            {% block main %}
             <h1>CRIAR CONTA</h1>
             <p class="subtitle">Preencha os campos para se registrar</p>
             
+        
             <form action="{% url 'usuario_cadastrar' %}" method="post">
                 {% csrf_token %}
                 
@@ -25,5 +29,6 @@
             </form>
         </div>
     </div>
+{% endblock %}
 </body>
 </html>
