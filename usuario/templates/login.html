@@ -1,13 +1,13 @@
+{% extends 'home.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% block header %}
     <title>Login</title>
     <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
-</head>
+{% endblock %}
+
 <body>
+    {% block main %}
     <div class="login-container">
         <div class="login-box">
             <h1>BEM-VINDO</h1>
@@ -27,5 +27,6 @@
             </form>
         </div>
     </div>
+{% endblock %}
 </body>
 </html>

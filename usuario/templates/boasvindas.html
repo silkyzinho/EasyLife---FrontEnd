@@ -1,0 +1,37 @@
+{% extends 'base.html' %}    
+{% load static %}
+
+    {% block nav %}
+        <a href="#">&#x2190; BEM-VINDO(A)</a>
+        <p>Olá, {{ user.username }}</p>
+    {% endblock %}
+
+    {% block header %}
+        <h2>EASY LIFE</h2>
+        <p>Calculadora de Gastos</p>
+    {% endblock %}
+
+    {% block main %}
+        <div class="options-title">OPÇÕES &#9776;</div>
+
+        <div class="options-grid">
+            <a href="#" class="button-link">CASA &#127968;</a>
+            <a href="#" class="button-link">EDUCAÇÃO &#127891;</a>
+            <a href="#" class="button-link">ALIMENTAÇÃO &#127869;</a>
+            <a href="#" class="button-link">EXTRAS &#10133;</a>
+            <a href="#" class="button-link">SAÚDE E BELEZA &#10084;&#65039;</a>
+            <a href="#" class="button-link">COMPARAR &#128202;</a>
+            <a href="#" class="button-link full-width">TRANSPORTE &#128652;</a>
+        </div>
+    </main>
+    
+    <br>
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-secundario">Sair</button>
+    </form>
+{% endblock %}
+
+</body>
+</html>

@@ -5,40 +5,11 @@
     <title>Meu Perfil</title>
     <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
     {% end block %}
-
-    <style>
-        .profile-container {
-            width: 100%;
-            max-width: 500px;
-            text-align: left;
-        }
-        .profile-box {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .profile-box h1 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .profile-info p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-        .profile-info strong {
-            color: #212121;
-        }
-        .text-muted {
-            color: #999;
-            font-style: italic;
-        }
-    </style>
+    
 </head>
 <body>
 
+{% block main %}
 <div class="profile-container">
     <div class="profile-box">
         <h1>Meu Perfil</h1>
@@ -83,6 +54,7 @@
 
     </div>
 </div>
+{% endblock %}
 
 </body>
 </html>
