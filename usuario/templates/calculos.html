@@ -1,11 +1,90 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-    
-{% endblock %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Life - Cálculo</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
 
-{% block header %}
-    <h2></h2>
-    <p></p>
-{% endblock %}
+    <header class="header-calculator">
+        <a href="#" class="back-button">←</a>
+        <h1 class="page-total">GASTO TOTAL R$ 0,00</h1>
+    </header>
+
+    <main class="main-content-calculator">
+        <section class="category-section">
+            <h2 class="category-title">
+                <span class="category-name">EXTRAS</span>
+                <span class="icon">+</span>
+            </h2>
+
+            <div class="category-box">
+                <div class="input-form">
+                    <div class="input-field">
+                        <label for="viagens">Viagens:</label>
+                        <input type="text" id="viagens" name="viagens" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="roupas">Roupas:</label>
+                        <input type="text" id="roupas" name="roupas" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="cinema">Cinema:</label>
+                        <input type="text" id="cinema" name="cinema" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="shows">Shows:</label>
+                        <input type="text" id="shows" name="shows" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="festas">Festas:</label>
+                        <input type="text" id="festas" name="festas" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="presentes">Presentes:</label>
+                        <input type="text" id="presentes" name="presentes" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="animais">Animais Domésticos:</label>
+                        <input type="text" id="animais" name="animais" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="servicos">Serviços e Produtos:</label>
+                        <input type="text" id="servicos" name="servicos" placeholder="R$ 0,00">
+                    </div>
+                    <div class="input-field">
+                        <label for="outros">Outros:</label>
+                        <input type="text" id="outros" name="outros" placeholder="R$ 0,00">
+                    </div>
+                </div>
+
+                <div class="statistics-box">
+                    <h3 class="statistics-title">ESTATÍSTICAS</h3>
+                    <div class="chart-container" id="pie-chart-extras">
+                        </div>
+                    <div class="legend-container">
+                        <div class="legend-item"><span class="color-box" style="background-color: #f29f05;"></span> Viagens</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #5d92d4;"></span> Roupas</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #216aae;"></span> Cinema</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Shows</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Festas</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Presentes</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Animais Domésticos</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Serviços e Produtos</div>
+                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Outros</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="total-bar">
+            <span>GASTO TOTAL:</span>
+            <span>R$ 0,00</span>
+        </div>
+    </main>
+
+</body>
+</html>

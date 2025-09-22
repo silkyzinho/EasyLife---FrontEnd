@@ -1,11 +1,82 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}    
 {% load static %}
 
-{% block title %}
-    
-{% endblock %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Life - Comparar</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
 
-{% block header %}
-    <h2></h2>
-    <p></p>
-{% endblock %}
+    <header class="header-compare">
+        <a href="#" class="back-button">←</a>
+        <button class="compare-button">
+            COMPARAR
+            <span class="icon"></span>
+        </button>
+    </header>
+
+    <main class="main-content-compare">
+        <section class="chart-section">
+            <div class="chart-box">
+                <p class="chart-title">Mês</p>
+                <div class="bar-chart-container" id="monthly-chart">
+                    </div>
+            </div>
+
+            <div class="chart-box">
+                <p class="chart-title">Ano</p>
+                <div class="bar-chart-container" id="yearly-chart">
+                    </div>
+            </div>
+        </section>
+
+        <section class="details-section">
+            <div class="details-header">
+                <h2 class="details-title">Valores e Gastos</h2>
+            </div>
+            
+            <div class="details-content">
+                <div class="expenses-table">
+                    <div class="table-row table-header-row">
+                        <span class="cell-category">CASA</span>
+                        <span class="cell-label">VALOR</span>
+                        <span class="cell-value">R$ 0,00</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="cell-category">ALIMENTAÇÃO</span>
+                        <span class="cell-label">VALOR</span>
+                        <span class="cell-value">R$ 0,00</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="cell-category">SAÚDE</span>
+                        <span class="cell-label">VALOR</span>
+                        <span class="cell-value">R$ 0,00</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="cell-category">TRANSPORTE</span>
+                        <span class="cell-label">VALOR</span>
+                        <span class="cell-value">R$ 0,00</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="cell-category">EDUCAÇÃO</span>
+                        <span class="cell-label">VALOR</span>
+                        <span class="cell-value">R$ 0,00</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="cell-category">EXTRAS</span>
+                        <span class="cell-label">VALOR</span>
+                        <span class="cell-value">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <div class="pie-chart-container" id="pie-chart">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

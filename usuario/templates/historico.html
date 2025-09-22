@@ -1,11 +1,59 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-    exibir
-{% endblock %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Life - Histórico</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
 
-{% block header %}
-    <h2></h2>
-    <p></p>
-{% endblock %}
+    <header class="header-history">
+        <a href="#" class="back-button">←</a>
+        <h1 class="history-title">HISTÓRICO</h1>
+    </header>
+
+    <main class="main-content-history">
+        <div class="top-controls">
+            <button class="control-button select-button">
+                SELECIONAR
+                <span class="icon">✓</span>
+            </button>
+            <button class="control-button delete-button">
+                EXCLUIR
+                <span class="icon">ⓧ</span>
+            </button>
+        </div>
+
+        <div class="history-list">
+            <div class="history-header">
+                <span class="column-name">NOME</span>
+                <span class="column-date">DATA</span>
+                <span class="column-value">VALOR FINAL</span>
+            </div>
+
+            <div class="history-item">
+                <span class="item-name">NOME</span>
+                <span class="item-date">DATA</span>
+                <span class="item-value">VALOR FINAL</span>
+            </div>
+
+            <div class="history-item">
+                <span class="item-name">NOME</span>
+                <span class="item-date">DATA</span>
+                <span class="item-value">VALOR FINAL</span>
+            </div>
+
+            <div class="history-item">
+                <span class="item-name">NOME</span>
+                <span class="item-date">DATA</span>
+                <span class="item-value">VALOR FINAL</span>
+            </div>
+
+            </div>
+    </main>
+
+</body>
+</html>
