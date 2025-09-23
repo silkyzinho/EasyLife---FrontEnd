@@ -82,13 +82,13 @@ def excluir_usuario(request):
     if request.method == 'POST':
         user.delete()
         auth_logout(request)
-        return redirect('login')
+        return redirect('login.html')
     return render(request, '') 
 
 @login_required
 def logout(request):
     auth_logout(request)        # encerra a sessão
-    return redirect('home')
+    return redirect('home.html')
 
 # plano
 

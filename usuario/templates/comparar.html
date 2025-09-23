@@ -1,13 +1,12 @@
 {% extends 'base.html' %}    
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% block head %}
     <title>Easy Life - Comparar</title>
-    <link rel="stylesheet" href="styles.css"> </head>
+    <link rel="stylesheet" href="styles.css"> 
+{% endblock %}
+
 <body>
 
     <header class="header-compare">
@@ -19,6 +18,7 @@
     </header>
 
     <main class="main-content-compare">
+        {% block main %}
         <section class="chart-section">
             <div class="chart-box">
                 <p class="chart-title">Mês</p>
@@ -76,7 +76,14 @@
                     </div>
             </div>
         </section>
+    {% endblock %}
     </main>
+    
+    <footer>
+        {% block footer %}
+        <p> oii</p>
+        {% endblock %}
+    </footer>
 
 </body>
 </html>

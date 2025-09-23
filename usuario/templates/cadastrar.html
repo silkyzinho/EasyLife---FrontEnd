@@ -1,33 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    {% block header %}
-    <title>Criar Conta</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    {% endblock %}
+{% block head %}
+    <title>Easy Life - Cadastro</title>
+    <link rel="stylesheet" href="styles.css"> 
+{% endblock %}
 
 <body>
-    <div class="login-container">
-        <div class="login-box">
 
-            {% block main %}
-            <h1>CRIAR CONTA</h1>
-            <p class="subtitle">Preencha os campos para se registrar</p>
-            
-            <form action="{% url 'usuario_cadastrar' %}" method="post">
-                {% csrf_token %}
-                
-                {{ form.as_p }}
-                
-                <button type="submit" class="btn-principal">Cadastrar</button>
-                
-                <div class="divider"></div>
-                
-                <p class="link-texto">Já tem uma conta?</p>
-                <a href="{% url 'usuario_login' %}" class="btn-secundario">Fazer Login</a>
-            </form>
+    <main class="auth-container">
+        {% block main %}
+        <div class="login-column">
+            <div class="login-content">
+                <img src="{% static 'logo.png' %}" alt="Porquinho-cofre" class="piggy-image">
+                <h1 class="login-title">BEM-VINDO(A)<br>DE VOLTA!</h1>
+                <p class="login-text">
+                    Entre diretamente com o login que já fez
+                </p>
+                <button class="login-button">ENTRAR</button>
+            </div>
         </div>
-    </div>
-{% endblock %}
+
+        <div class="register-column">
+            <div class="register-content">
+                <h2 class="register-title">CRIAR CONTA</h2>
+                <p class="register-subtitle">Use seu email para registrar</p>
+                
+                <form class="register-form">
+                    <input type="text" placeholder="Nome" class="form-input">
+                    <input type="email" placeholder="Email" class="form-input">
+                    <input type="password" placeholder="Senha" class="form-input">
+                    <button type="submit" class="register-button">CRIAR</button>
+                </form>
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p> oii</p>
+        {% endblock %}
+    </footer>
+    
 </body>
 </html>

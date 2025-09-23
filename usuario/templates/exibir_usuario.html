@@ -1,60 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    {% block header %}
-    <title>Meu Perfil</title>
-    <link rel="stylesheet" href="{% static 'usuarios/style.css' %}">
-    {% end block %}
-    
-</head>
-<body>
-
-{% block main %}
-<div class="profile-container">
-    <div class="profile-box">
-        <h1>Meu Perfil</h1>
-
-        <div class="profile-info">
-            <p><strong>Usuário:</strong> {{ user.username }}</p>
-            
-            <p>
-                <strong>Email:</strong> 
-                {% if user.email %}
-                    {{ user.email }}
-                {% else %}
-                    <span class="text-muted">Não informado</span>
-                {% endif %}
-            </p>
-
-            <p>
-                <strong>Nome:</strong> 
-                {% if user.first_name %}
-                    {{ user.first_name }}
-                {% else %}
-                    <span class="text-muted">Não informado</span>
-                {% endif %}
-            </p>
-
-            <p>
-                <strong>Sobrenome:</strong> 
-                {% if user.last_name %}
-                    {{ user.last_name }}
-                {% else %}
-                    <span class="text-muted">Não informado</span>
-                {% endif %}
-            </p>
-
-            <p><strong>Na plataforma desde:</strong> {{ user.date_joined|date:"d/m/Y" }}</p>
-            
-            <p><strong>Último login:</strong> {{ user.last_login|date:"d/m/Y à\s H:i" }}</p>
-        </div>
-
-        <br>
-        <a href="{% url 'home.html' %}" class="btn-secundario" style="text-align: center;">Voltar para a Home</a>
-
-    </div>
-</div>
+{% block head %}
+    <title>Easy Life - Perfil</title>
+    <link rel="stylesheet" href="styles.css"> </head>
 {% endblock %}
+
+    <main class="profile-container">
+        {% blcok main %}
+        <a href="#" class="back-button">←</a>
+        <h1 class="profile-title">SEU PERFIL</h1>
+
+        <section class="profile-photo-section">
+            <h2 class="section-subtitle">Foto de perfil</h2>
+            <div class="photo-area">
+                <div class="photo-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#000"/>
+                    </svg>
+                </div>
+                <div class="photo-buttons">
+                    <button class="action-button">Alterar foto</button>
+                    <button class="action-button">Remover foto</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-info-section">
+            <div class="info-field">
+                <label for="name">Nome:</label>
+                <div class="input-and-button">
+                    <input type="text" id="name" name="name" value="Nome do Usuário" disabled>
+                    <button class="edit-button">Editar</button>
+                </div>
+            </div>
+
+            <div class="info-field">
+                <label for="email">Email:</label>
+                <div class="input-and-button">
+                    <input type="email" id="email" name="email" value="email@exemplo.com" disabled>
+                    <button class="edit-button">Editar</button>
+                </div>
+            </div>
+            
+            <div class="info-field">
+                <label for="password">Senha:</label>
+                <div class="input-and-button">
+                    <input type="password" id="password" name="password" value="" disabled>
+                    <button class="edit-button">Editar</button>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+    </main>
 
 </body>
 </html>

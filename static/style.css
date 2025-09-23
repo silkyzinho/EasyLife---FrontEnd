@@ -702,3 +702,446 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* Estilos gerais do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2f33; /* Cor de fundo escura */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal com duas colunas */
+.auth-container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- */
+/* Coluna de Login (Esquerda) */
+.login-column {
+    flex: 1;
+    background: #36393f; /* Cor escura do lado esquerdo */
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-content {
+    max-width: 250px;
+}
+
+.piggy-image {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.login-text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- */
+/* Coluna de Cadastro (Direita) */
+.register-column {
+    flex: 1;
+    background-color: #e6b0b0; /* Cor de fundo clara do lado direito */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.register-content {
+    max-width: 250px;
+}
+
+.register-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0 5px;
+}
+
+.register-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    text-indent: 10px; /* Adiciona um recuo para o texto */
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #6a82fb;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .auth-container {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+    }
+
+    .login-column, .register-column {
+        padding: 30px 20px;
+    }
+}
+
+/* Estilos gerais do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f2f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal e seus elementos */
+.login-container {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #6a82fb;
+    padding: 10px 30px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-title::before, .welcome-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 10px;
+    background: #6a82fb;
+    transform: translateY(-50%) skewY(-20deg);
+}
+
+.welcome-title::before {
+    left: -20px;
+    transform: translateY(-50%) skewY(20deg);
+}
+
+.welcome-title::after {
+    right: -20px;
+    transform: translateY(-50%) skewY(-20deg);
+}
+
+/* Caixa de login principal */
+.login-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: -10px; /* Sobrepõe levemente o título */
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #4a90e2;
+    padding: 8px 25px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0 auto 30px;
+}
+
+/* Formulário de login */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashed-border {
+    width: 90%;
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.form-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.no-account-text {
+    font-size: 0.8rem;
+    color: #666;
+    order: 2;
+    margin: 10px auto;
+}
+
+.button-primary, .button-secondary {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.button-primary {
+    background: #4a90e2;
+    color: #fff;
+    order: 1;
+}
+
+.button-secondary {
+    background: #f0f0f0;
+    color: #4a90e2;
+    border: 1px solid #4a90e2;
+    order: 3;
+}
+
+/* Estilos gerais do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f2f1; /* Cor de fundo para simular a imagem */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.profile-container {
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.profile-title {
+    font-size: 1.5rem;
+    color: #fff;
+    background: linear-gradient(to right, #6a82fb, #4a90e2);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Seção de foto de perfil */
+.profile-photo-section {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.photo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-placeholder {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photo-placeholder svg {
+    width: 60px;
+    height: 60px;
+    fill: #ccc;
+}
+
+.photo-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Seção de informações do perfil */
+.profile-info-section {
+    padding: 0 20px;
+}
+
+.info-field {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.info-field label {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.input-and-button {
+    display: flex;
+    align-items: center;
+}
+
+.input-and-button input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.edit-button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    color: #4a90e2;
+    background-color: #fff;
+    border: 1px solid #4a90e2;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .photo-area {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .photo-buttons {
+        flex-direction: row;
+        gap: 10px;
+    }
+}

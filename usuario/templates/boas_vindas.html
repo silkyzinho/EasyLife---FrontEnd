@@ -24,14 +24,18 @@
             <a href="#" class="button-link full-width">TRANSPORTE &#128652;</a>
         </div>
     </main>
+    {% endblock %}
     
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
     <br>
 
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
         <button type="submit" class="btn-secundario">Sair</button>
     </form>
-{% endblock %}
 
 </body>
 </html>

@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+
+{% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Life - Cálculo</title>
-    <link rel="stylesheet" href="styles.css"> </head>
+    <link rel="stylesheet" href="styles.css"> 
+{% endblock %}
+
 <body>
 
     <header class="header-calculator">
@@ -16,6 +17,7 @@
     </header>
 
     <main class="main-content-calculator">
+        {% block main %}
         <section class="category-section">
             <h2 class="category-title">
                 <span class="category-name">EXTRAS</span>
@@ -84,6 +86,7 @@
             <span>GASTO TOTAL:</span>
             <span>R$ 0,00</span>
         </div>
+    {% endblock %}
     </main>
 
 </body>
