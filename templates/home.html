@@ -8,8 +8,13 @@
     {% block header %}
         <h1 class="header-title">BEM-VINDO(A)</h1>
         <nav class="header-nav">
-            <button class="link-button">ENTRAR</button>
-            <button class="link-button">CRIAR CONTA</button>
+            <a href="http://127.0.0.1:8000/usuario/login/">
+                <button>Entrar</button>
+              </a>
+              
+              <a href="http://127.0.0.1:8000/usuario/cadastrar/">
+                <button>Criar conta</button>
+              </a>
         </nav>
     {% endblock %}
     
@@ -35,3 +40,9 @@
         </section>
     {% endblock %}   
     </main>
+
+    <footer>
+        {% block footer %}
+        <p> oii</p>
+        {% endblock %}
+    </footer> 

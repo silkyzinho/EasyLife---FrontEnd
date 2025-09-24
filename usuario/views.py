@@ -67,9 +67,9 @@ def boas_vindas(request):
     return render(request, 'boas_vindas.html')
 
 @login_required
-def exibir_usuario(request, id=None):
+def loserperfil(request, id=None):
     usuario = get_object_or_404(Usuario, user=request.user)
-    return render(request, 'exibir_usuario.html', {'usuario': usuario})
+    return render(request, 'loserperfil.html', {'usuario': usuario})
 
 @login_required
 def editar_usuario(request):
