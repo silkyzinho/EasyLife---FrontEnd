@@ -1,91 +1,206 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-{% block head %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Life - Cálculo</title>
-    <link rel="stylesheet" href="styles.css"> 
+<head>
+    {% blcok head %}
+    <title>Controle de Despesas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="">
+    <link rel="preconnect" href="" crossorigin>
+    <link href="" rel="stylesheet">
 {% endblock %}
-
+</head>
 <body>
 
-    <header class="header-calculator">
-        <a href="#" class="back-button">←</a>
-        <h1 class="page-total">GASTO TOTAL R$ 0,00</h1>
-    </header>
-
-    <main class="main-content-calculator">
+    <main>
         {% block main %}
-        <section class="category-section">
-            <h2 class="category-title">
-                <span class="category-name">EXTRAS</span>
-                <span class="icon">+</span>
-            </h2>
+    <div class="container">
+        <div class="section">
+            <h2 class="section-title">SALÁRIO </h2>
+            <div class="card">
+                <h3>CARTEIRA WALLET</h3>
+                </div>
+        </div>
 
-            <div class="category-box">
-                <div class="input-form">
-                    <div class="input-field">
-                        <label for="viagens">Viagens:</label>
-                        <input type="text" id="viagens" name="viagens" placeholder="R$ 0,00">
+        <div class="section">
+            <h2 class="section-title">CASA </h2>
+            <div class="card">
+                <div class="content-wrapper">
+                    <div class="form-inputs">
+                        <label>Aluguel:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Água:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Luz:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Gás:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Internet:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Telefone:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Serviços e Prestações:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Outros:</label>
+                        <input type="number" placeholder="R$ 0,00">
                     </div>
-                    <div class="input-field">
-                        <label for="roupas">Roupas:</label>
-                        <input type="text" id="roupas" name="roupas" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="cinema">Cinema:</label>
-                        <input type="text" id="cinema" name="cinema" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="shows">Shows:</label>
-                        <input type="text" id="shows" name="shows" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="festas">Festas:</label>
-                        <input type="text" id="festas" name="festas" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="presentes">Presentes:</label>
-                        <input type="text" id="presentes" name="presentes" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="animais">Animais Domésticos:</label>
-                        <input type="text" id="animais" name="animais" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="servicos">Serviços e Produtos:</label>
-                        <input type="text" id="servicos" name="servicos" placeholder="R$ 0,00">
-                    </div>
-                    <div class="input-field">
-                        <label for="outros">Outros:</label>
-                        <input type="text" id="outros" name="outros" placeholder="R$ 0,00">
+                    <div class="stats">
+                        <h3>ESTATÍSTICAS</h3>
+                        <div class="chart-placeholder"></div>
+                        <ul class="legend">
+                            <li>■ Aluguel</li>
+                            <li>■ Contas Fixas</li>
+                            <li>■ Serviços</li>
+                            <li>■ Outros</li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="statistics-box">
-                    <h3 class="statistics-title">ESTATÍSTICAS</h3>
-                    <div class="chart-container" id="pie-chart-extras">
-                        </div>
-                    <div class="legend-container">
-                        <div class="legend-item"><span class="color-box" style="background-color: #f29f05;"></span> Viagens</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #5d92d4;"></span> Roupas</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #216aae;"></span> Cinema</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Shows</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Festas</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Presentes</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Animais Domésticos</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Serviços e Produtos</div>
-                        <div class="legend-item"><span class="color-box" style="background-color: #3b5a83;"></span> Outros</div>
-                    </div>
+                <div class="total-cost">
+                    GASTO TOTAL: R$ 0,00
                 </div>
             </div>
-        </section>
-        <div class="total-bar">
-            <span>GASTO TOTAL:</span>
-            <span>R$ 0,00</span>
         </div>
+
+        <div class="section">
+            <h2 class="section-title">ALIMENTAÇÃO 🛡</h2>
+            <div class="card">
+                <div class="content-wrapper">
+                    <div class="form-inputs">
+                        <label>Mercado:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Fora de Casa:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Happy Hour:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Padaria:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Açougue:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Outros:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                    </div>
+                    <div class="stats">
+                        <h3>ESTATÍSTICAS</h3>
+                        <div class="chart-placeholder"></div>
+                        <ul class="legend">
+                            <li>■ Mercado</li>
+                            <li>■ Fora de Casa</li>
+                            <li>■ Happy Hour</li>
+                            <li>■ Padaria</li>
+                            <li>■ Açougue</li>
+                            <li>■ Outros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="total-cost">
+                    GASTO TOTAL: R$ 0,00
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">TRANSPORTE </h2>
+            <div class="card">
+                <div class="content-wrapper">
+                    <div class="form-inputs">
+                        <label>Transporte público:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Gasolina:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Manutenção:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Seguro:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>App de transporte:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Outros:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                    </div>
+                    <div class="stats">
+                        <h3>ESTATÍSTICAS</h3>
+                        <div class="chart-placeholder"></div>
+                        <ul class="legend">
+                            <li>■ Transporte público</li>
+                            <li>■ Gasolina</li>
+                            <li>■ Manutenção</li>
+                            <li>■ Seguro</li>
+                            <li>■ App de transporte</li>
+                            <li>■ Outros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="total-cost">
+                    GASTO TOTAL: R$ 0,00
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">BELEZA E SAÚDE </h2>
+            <div class="card">
+                <div class="content-wrapper">
+                    <div class="form-inputs">
+                        <label>Remédios:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Plano de Saúde:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Psicólogo:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Produtos de higiene:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Academia:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Salão/Barbearia:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Outros:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                    </div>
+                    <div class="stats">
+                        <h3>ESTATÍSTICAS</h3>
+                        <div class="chart-placeholder"></div>
+                        <ul class="legend">
+                           <li>■ Remédios</li>
+                           <li>■ Plano de Saúde</li>
+                           <li>■ Produtos de higiene</li>
+                           <li>■ Cuidados Pessoais</li>
+                           <li>■ Outros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="total-cost">
+                    GASTO TOTAL: R$ 0,00
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">EDUCAÇÃO </h2>
+            <div class="card">
+                <div class="content-wrapper">
+                    <div class="form-inputs">
+                        <label>Mensalidade:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Cursos:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                        <label>Outros:</label>
+                        <input type="number" placeholder="R$ 0,00">
+                    </div>
+                    <div class="stats">
+                        <h3>ESTATÍSTICAS</h3>
+                        <div class="chart-placeholder"></div>
+                        <ul class="legend">
+                            <li>■ Mensalidade</li>
+                            <li>■ Cursos</li>
+                            <li>■ Outros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="total-cost">
+                    GASTO TOTAL: R$ 0,00
+                </div>
+            </div>
+        </div>
+    </div>
     {% endblock %}
     </main>
 

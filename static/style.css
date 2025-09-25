@@ -692,16 +692,124 @@ body {
 }
 
 /* Responsividade(CALCULOS BIXA) */
-@media (max-width: 480px) {
-    .category-box {
-        flex-direction: column;
-        align-items: center;
-    }
-    .input-form {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
+/* Usando uma fonte pixelada para se assemelhar ao design */
+body {
+    background-color: #1e1e2f; /* Fundo escuro azulado/acinzentado */
+    color: #2c3e50; /* Cor de texto padrão */
+    font-family: 'VT323', monospace; /* Fonte pixelada */
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
+
+.container {
+    width: 100%;
+    max-width: 450px; /* Largura máxima para simular a tela de um celular */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre as seções */
+}
+
+.section-title {
+    background-color: #3b8c83; /* Fundo verde-azulado para os títulos */
+    color: #eaf2e3; /* Cor do texto do título */
+    padding: 8px;
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Fonte mais "gamer" para títulos */
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card {
+    background-color: #d8e4c2; /* Fundo verde-claro/bege para os cards */
+    border: 3px solid #2c3e50; /* Borda escura */
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 5px 5px 0px #000000; /* Sombra para dar profundidade */
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 15px; /* Espaço entre inputs e estatísticas */
+    justify-content: space-between;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 60%; /* Ocupa 60% da largura do card */
+}
+
+.form-inputs label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-inputs input {
+    background-color: #f0f6e8;
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+    padding: 8px;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Garante que padding não afete a largura total */
+}
+
+.stats {
+    width: 35%; /* Ocupa 35% da largura do card */
+    text-align: center;
+}
+
+.stats h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+/* Placeholder para o gráfico de pizza */
+.chart-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: conic-gradient(#3498db 0% 30%, #e74c3c 30% 55%, #f1c40f 55% 80%, #2ecc71 80% 100%);
+    border: 2px solid #2c3e50;
+    margin: 0 auto; /* Centraliza o gráfico */
+}
+
+.legend {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.legend li {
+    margin-bottom: 4px;
+}
+
+.total-cost {
+    background-color: #4a5d6a;
+    color: #ffffff;
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/* Estilo específico para o card de "CARTEIRA" */
+.card h3 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
 
 /* CADASTRAR HEIN PROSTITUTA VEM AQUI */
 body {
@@ -845,7 +953,7 @@ body {
 /* LOGIN OH DENISE SAI DA LIVE FILHA */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0f2f1;
+    background-color: #053F3D;
     margin: 0;
     padding: 0;
     display: flex;
@@ -865,12 +973,12 @@ body {
 .welcome-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #fff;
-    background: #6a82fb;
+    color: #053F3D;
+    background: #ffffff;
     padding: 10px 30px;
-    border-radius: 20px;
+    border-radius: 30px;
     position: relative;
-    z-index: 1;
+    z-index: 4;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -880,7 +988,7 @@ body {
     top: 50%;
     width: 30px;
     height: 10px;
-    background: #6a82fb;
+    background: #ffffff;
     transform: translateY(-50%) skewY(-20deg);
 }
 
@@ -908,7 +1016,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
-    background: #4a90e2;
+    background: #053F3D;
     padding: 8px 25px;
     border-radius: 20px;
     display: inline-block;
@@ -961,7 +1069,7 @@ body {
 
 .no-account-text {
     font-size: 0.8rem;
-    color: #5fe67e;
+    color: #053F3D;
     order: 2;
     margin: 10px auto;
 }
@@ -980,19 +1088,20 @@ body {
 }
 
 .button-primary {
-    background: #4a90e2;
-    color: #fff;
+    background: #ffffff;
+    color: #053F3D;
+    border: 1px solid #053F3D;
     order: 1;
 }
 
 .button-secondary {
-    background: #f0f0f0;
-    color: #4a90e2;
-    border: 1px solid #4a90e2;
+    background: #ffffff;
+    color: #053F3D;
+    border: 1px solid #053F3D;
     order: 3;
 }
 
-/* LOGIN OH DENISE SAI DA LIVE FILHA */
+/* LOGIN OH DENISE SAI DA LIVE FILHA FIM */
 
 /* PERFIL FULANO DE TOWN */
 body {
@@ -1145,5 +1254,154 @@ body {
     .photo-buttons {
         flex-direction: row;
         gap: 10px;
+    }
+}
+
+/* BOAS VINDAS TICA (reutiliza o fundo dos cálculos)  */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f2f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- */
+/* Estilos do Cabeçalho */
+.header-dashboard {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0;
+}
+
+.back-button {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-greeting {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+/* --- */
+/* Conteúdo Principal */
+.main-content-dashboard {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Bloco do Logo/Título Central */
+.logo-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.easy-life-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.easy-life-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ribbon {
+    background-color: #555;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.piggy-image {
+    width: 100px;
+    height: auto;
+}
+
+/* Botão de Opções */
+.options-menu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.options-button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: #4a90e2;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.options-button .icon {
+    margin-left: 10px;
+}
+
+/* Grade de Botões de Categorias */
+.category-buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 15px;
+}
+
+.category-button {
+    text-decoration: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #6a82fb; /* Cor de fundo padrão dos botões */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de Transporte (largura total) */
+.full-width-button {
+    grid-column: 1 / -1; /* Ocupa as duas colunas */
+    background: #4a90e2;
+    margin-top: 5px;
+}
+
+/* Ajustes de cores para simular os ícones ou ênfase */
+.category-button:nth-child(1) { background: #5d92d4; } /* Casa */
+.category-button:nth-child(3) { background: #f29f05; } /* Alimentação */
+.category-button:nth-child(5) { background: #c94c4c; } /* Saúde & Beleza */
+
+/* Responsividade ( BOAS VINDAS TICA) */
+@media (max-width: 400px) {
+    .category-buttons-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
     }
 }

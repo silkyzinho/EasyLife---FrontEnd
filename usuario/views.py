@@ -27,7 +27,7 @@ def cadastrar(request):
             auth_login(request, user)
             
             messages.success(request, f'Usuário {username} cadastrado com sucesso!')
-            return redirect('exibir_usuario')
+            return redirect('loserperfil.html')
     else:
         form = CadastrarForm()
 
@@ -50,7 +50,7 @@ def login(request):
                     return JsonResponse({'success': True, 'message': 'Login realizado com sucesso!'})
 
                 messages.success(request, 'Login realizado com sucesso!')
-                return redirect('exibir_usuario')
+                return redirect('loserperfil.html')
             else:
                 if request.headers.get('x-requested-with') == 'XMLHttpRequest':
                     return JsonResponse({'success': False, 'message': 'Nome ou senha inválidos.'})

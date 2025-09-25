@@ -1,41 +1,66 @@
-{% extends 'base.html' %}    
+{% extends 'base.html' %}
 {% load static %}
 
-    {% block nav %}
-        <a href="#">&#x2190; BEM-VINDO(A)</a>
-        <p>Olá, {{ user.username }}</p>
+<head>
+    {% block head %}
+    <title>Easy Life - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
     {% endblock %}
 
-    {% block header %}
-        <h2>EASY LIFE</h2>
-        <p>Calculadora de Gastos</p>
-    {% endblock %}
+</head>
+<body>
 
-    {% block main %}
-        <div class="options-title">OPÇÕES &#9776;</div>
+    <header class="header-dashboard">
+        <a href="" class="back-button">← BEM-VINDO(A)</a>
+        <span class="user-greeting">Olá,  </span>
+    </header>
 
-        <div class="options-grid">
-            <a href="#" class="button-link">CASA &#127968;</a>
-            <a href="#" class="button-link">EDUCAÇÃO &#127891;</a>
-            <a href="#" class="button-link">ALIMENTAÇÃO &#127869;</a>
-            <a href="#" class="button-link">EXTRAS &#10133;</a>
-            <a href="#" class="button-link">SAÚDE E BELEZA &#10084;&#65039;</a>
-            <a href="#" class="button-link">COMPARAR &#128202;</a>
-            <a href="#" class="button-link full-width">TRANSPORTE &#128652;</a>
-        </div>
-    </main>
-    {% endblock %}
-    
-    <footer>
-        {% block footer %}
+    <main class="main-content-dashboard">
+        {% block main %}
+        <section class="logo-section">
+            <div class="easy-life-box">
+                <div class="easy-life-text">
+                    <span class="ribbon">EASY LIFE</span>
+                    <p class="subtitle">Calculadora de Gastos</p>
+                </div>
+                <img src="{% static 'logo.png' %}" alt="Porquinho-cofre com cartola e calculadora" class="piggy-image">
+            </div>
+        </section>
+        
+        <section class="options-menu">
+            <button class="options-button">
+                OPÇÕES <span class="icon">≡</span>
+            </button>
+        </section>
+
+        <section class="category-buttons-grid">
+            <a href="" class="category-button">
+                CASA <span></span>
+            </a>
+            <a href="" class="category-button">
+                EDUCAÇÃO
+            </a>
+
+            <a href="" class="category-button">
+                ALIMENTAÇÃO
+            </a>
+            <a href="" class="category-button">
+                EXTRAS
+            </a>
+
+            <a href="" class="category-button">
+                SAÚDE & BELEZA <span></span>
+            </a>
+            <a href="" class="category-button">
+                COMPARAR
+            </a>
+
+            <a href="" class="category-button full-width-button">
+                TRANSPORTE
+            </a>
+        </section>
         {% endblock %}
-    </footer>
-    <br>
-
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit" class="btn-secundario">Sair</button>
-    </form>
+    </main>
 
 </body>
 </html>
