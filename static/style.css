@@ -4,11 +4,6 @@
     text-align: center;
     padding: 15px;
 }
-
-.login-container {
-    background: rgb(35, 91, 35);
-}
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -23,8 +18,8 @@
 }
 
 .logo-banner {
-    background-color: #f0f0f0;
-    border: 2px solid #ddd;
+    background-color: #ffffff;
+    border: 2px solid #053F3D;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
@@ -52,7 +47,7 @@
     border-radius: 8px;
     padding: 20px 10px;
     text-decoration: none;
-    color: #b8dec9;
+    color: #053F3D;
     font-weight: bold;
     text-align: center;
     display: block;
@@ -87,7 +82,7 @@
     color: #212121;
 }
 .text-muted {
-    color: #b2dfb2;
+    color: #053F3D;
     font-style: italic;
 }
 /* HOME QUERIDA */
@@ -101,10 +96,37 @@ body {
     align-items: center;
 }
 
+.button-primary-1, .button-secondary-1 {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.button-primary-1 {
+    background: #ffffff;
+    color: #053F3D;
+    border: 1px solid #053F3D;
+    order: 1;
+}
+
+.button-secondary-1 {
+    background: #ffffff;
+    color: #053F3D;
+    border: 1px solid #053F3D;
+    order: 3;
+}
+
 /* Estilos para o cabeçalho (header) */
 .header {
-    width: 100%;
-    max-width: 600px; /* Limite a largura para simular a imagem */
+    width: 91%;
+    max-width: 100; /* Limite a largura para simular a imagem */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,15 +136,17 @@ body {
 }
 
 .header-title {
-    font-size: 1.5rem;
-    color: #a3d8b7;
+    font-size: 2.5rem;
+    color: #053F3D;
+    align-items: center;
+    text-align: center;
 }
 
 .header-nav .nav-button {
     padding: 10px 15px;
     margin-left: 10px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: bold;
@@ -143,14 +167,16 @@ body {
 }
 
 .content-box-1, .content-box-2 {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
+    background-color: #053F3D;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .easy-life-box {
+    height: 150px ;
+    width: 389px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,9 +189,9 @@ body {
     text-align: center;
 }
 
-.ribbon {
-    background-color: #a0e0a4;
-    color: #fff;
+.ribbon-2 {
+    background-color: #053F3D;
+    color: #ffffff;
     padding: 5px 15px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -173,30 +199,30 @@ body {
     clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
 }
 
-.subtitle {
+.subtitle-2 {
     font-size: 1rem;
-    color: #7be89c;
+    color: #053F3D;
     margin-top: 10px;
 }
 
-.piggy-image {
-    width: 100px;
+.piggy-image-1 {
+    width: 150px;
     height: auto;
 }
 
 /* Estilos para a caixa de texto inferior */
 .content-box-2 {
-    background: linear-gradient(to right, #4a90e2, #6a82fb); /* Exemplo de gradiente */
+    background:(to right, #053f3d ); /* Exemplo de gradiente */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 170px;
 }
 
 .placeholder-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -867,13 +893,13 @@ body {
     margin-bottom: 20px;
 }
 
-.login-button {
+.button-primary-3 {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background-color: #4a90e2;
+    background-color: #053F3D;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -926,13 +952,13 @@ body {
     text-indent: 10px; /* Adiciona um recuo para o texto */
 }
 
-.register-button {
+.button-secondary-3 {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background: #6a82fb;
+    background: #053F3D;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -963,7 +989,7 @@ body {
 }
 
 /* Container principal e seus elementos */
-.login-container {
+.login-container-2 {
     width: 90%;
     max-width: 500px;
     text-align: center;
@@ -971,41 +997,22 @@ body {
 }
 
 .welcome-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     color: #053F3D;
     background: #ffffff;
     padding: 10px 30px;
+    border: 5px solid #053F3D;
     border-radius: 30px;
     position: relative;
     z-index: 4;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.welcome-title::before, .welcome-title::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 30px;
-    height: 10px;
-    background: #ffffff;
-    transform: translateY(-50%) skewY(-20deg);
-}
-
-.welcome-title::before {
-    left: -20px;
-    transform: translateY(-50%) skewY(20deg);
-}
-
-.welcome-title::after {
-    right: -20px;
-    transform: translateY(-50%) skewY(-20deg);
-}
-
 /* Caixa de login principal */
 .login-box {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 3px solid #053F3D;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -1018,7 +1025,7 @@ body {
     color: #fff;
     background: #053F3D;
     padding: 8px 25px;
-    border-radius: 20px;
+    border-radius: 30px;
     display: inline-block;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 0 auto 30px;
@@ -1033,7 +1040,7 @@ body {
 
 .dashed-border {
     width: 90%;
-    border: 2px dashed #ccc;
+    border: 2px dashed #cccccce7;
     border-radius: 20px;
     padding: 30px 20px;
     margin-bottom: 20px;
@@ -1048,13 +1055,13 @@ body {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #aad4ac;
+    color: #053F3D;
 }
 
 .input-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #053F3D;
     border-radius: 20px;
     box-sizing: border-box;
 }
@@ -1074,7 +1081,7 @@ body {
     margin: 10px auto;
 }
 
-.button-primary, .button-secondary {
+.button-primary-2, .button-secondary-2 {
     padding: 12px 20px;
     font-size: 1rem;
     font-weight: bold;
@@ -1087,14 +1094,14 @@ body {
     display: inline-block;
 }
 
-.button-primary {
+.button-primary-2 {
     background: #ffffff;
     color: #053F3D;
     border: 1px solid #053F3D;
     order: 1;
 }
 
-.button-secondary {
+.button-secondary-2 {
     background: #ffffff;
     color: #053F3D;
     border: 1px solid #053F3D;
