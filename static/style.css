@@ -88,7 +88,7 @@
 /* HOME QUERIDA */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -110,17 +110,19 @@ body {
 }
 
 .button-primary-1 {
-    background: #ffffff;
-    color: #053F3D;
-    border: 1px solid #053F3D;
-    order: 1;
+    background: #053F3D;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    order: 3;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .button-secondary-1 {
-    background: #ffffff;
-    color: #053F3D;
-    border: 1px solid #053F3D;
+    background: #053F3D;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     order: 3;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Estilos para o cabeçalho (header) */
@@ -131,7 +133,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: #053F3D;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -142,7 +144,7 @@ body {
     text-align: center;
 }
 
-.header-nav .nav-button {
+.header-nav-1 .nav-button-1 {
     padding: 10px 15px;
     margin-left: 10px;
     border: 1px solid #ffffff;
@@ -840,7 +842,7 @@ body {
 /* CADASTRAR HEIN PROSTITUTA VEM AQUI */
 body {
     font-family: Arial, sans-serif;
-    background-color: #86a2c7; /* Cor de fundo escura */
+    background-color: #ffffff; /* Cor de fundo escura */
     margin: 0;
     padding: 0;
     display: flex;
@@ -863,10 +865,12 @@ body {
 /* Coluna de Login (Esquerda) */
 .login-column {
     flex: 1;
-    background: #94a6ca; /* Cor escura do lado esquerdo */
+    background: #053F3D; /* Cor escura do lado esquerdo */
     color: #fff;
     padding: 40px 20px;
     display: flex;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -885,23 +889,26 @@ body {
 .login-title {
     font-size: 1.8rem;
     font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     margin: 0 0 10px;
+    border: 3px solid #ffffff;
 }
 
 .login-text {
     font-size: 0.9rem;
     margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .button-primary-3 {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
+    width: 100px;
+    padding: 10px;
+    font-size: 2rem;
     font-weight: bold;
-    color: #fff;
-    background-color: #053F3D;
-    border: none;
-    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #053F3D;
+    background-color: #ffffff;
+    border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -911,6 +918,8 @@ body {
 .register-column {
     flex: 1;
     background-color: #ffffff; /* Cor de fundo clara do lado direito */
+    border: 2px solid #ffffff;
+    border-radius: 10px;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -925,18 +934,20 @@ body {
 
 .register-title {
     font-size: 1.5rem;
-    color: #175339;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color: #053F3D;
     margin: 0 0 5px;
 }
 
 .register-subtitle {
-    font-size: 0.8rem;
-    color: #ace6ba;
+    font-size: 0.9rem;
+    color: #a6a6a6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 30px;
 }
 
 .register-form {
-    width: 100%;
+    width: 110%;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -945,22 +956,22 @@ body {
 .form-input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 2px solid #053F3D;
     border-radius: 20px;
     box-sizing: border-box;
     font-size: 0.9rem;
-    text-indent: 10px; /* Adiciona um recuo para o texto */
+    text-indent: 5px; /* Adiciona um recuo para o texto */
 }
 
 .button-secondary-3 {
     width: 100%;
-    padding: 12px;
-    font-size: 1rem;
+    padding: 10px;
+    font-size: 2rem;
     font-weight: bold;
-    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
     background: #053F3D;
-    border: none;
-    border-radius: 20px;
+    border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -1003,6 +1014,7 @@ body {
     background: #ffffff;
     padding: 10px 30px;
     border: 5px solid #053F3D;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 30px;
     position: relative;
     z-index: 4;
