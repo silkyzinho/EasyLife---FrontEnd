@@ -27,6 +27,10 @@
             </div>
         </section>
         
+        <div>
+            <a href="{% url 'loserperfil' %}" >Exibir perfil</a>
+        </div>
+
         <section class="options-menu">
             <button class="options-button">
                 OPÇÕES <span class="icon">≡</span>
@@ -34,31 +38,39 @@
         </section>
 
         <section class="category-buttons-grid">
-            <a href="" class="category-button">
+            <a href="{% url 'calculos' %}#casa" class="category-button">
                 CASA <span></span>
             </a>
-            <a href="" class="category-button">
+            <a href="{% url 'calculos' %}#educacao" class="category-button">
                 EDUCAÇÃO
             </a>
 
-            <a href="" class="category-button">
+            <a href="{% url 'calculos' %}#alimentacao" class="category-button">
                 ALIMENTAÇÃO
             </a>
             <a href="" class="category-button">
                 EXTRAS
             </a>
 
-            <a href="" class="category-button">
+            <a href="{% url 'calculos' %}#alimentacao" class="category-button">
                 SAÚDE & BELEZA <span></span>
             </a>
             <a href="" class="category-button">
                 COMPARAR
             </a>
 
-            <a href="" class="category-button full-width-button">
+            <a href="{% url 'calculos' %}#transporte" class="category-button full-width-button">
                 TRANSPORTE
             </a>
         </section>
+        <div>
+            <p class="no-account-text">Sem uma categoria especifica:</p>
+            <a href="{% url 'calculos' %}" >Calcular</a>
+               
+        </div>
+        <div class="info-field">
+            <a href="{% url 'logout' %}" class="action-button">Sair</a>
+       </div>
         {% endblock %}
     </main>
 

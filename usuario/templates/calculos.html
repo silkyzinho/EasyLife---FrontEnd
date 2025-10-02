@@ -1,48 +1,54 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<head>
-    {% blcok head %}
+{% block head %}
     <title>Controle de Despesas</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="">
-    <link rel="preconnect" href="" crossorigin>
-    <link href="" rel="stylesheet">
-{% endblock %}
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
-    <main>
-        {% block main %}
+{% endblock %}
+{% block main %}
+<main>
+    <form method="POST" action="{% url 'calculos' %}">
+    {% csrf_token %}
     <div class="container">
         <div class="section">
-            <h2 class="section-title">SALÁRIO </h2>
+            <h2 class="section-title">SALÁRIO</h2>
             <div class="card">
                 <h3>CARTEIRA WALLET</h3>
+                <div class="form-inputs">
+                    <label>Salário:</label>
+                    <input type="number" step="0.01" name="salario" placeholder="R$ 0,00" value="{{ salario|default_if_none:'' }}">
+                    <label>Extra:</label>
+                    <input type="number" step="0.01" name="extra" placeholder="R$ 0,00" value="{{ extra|default_if_none:'' }}">
                 </div>
-        </div>
+                <div class="total-cost">
+                    SALÁRIO TOTAL: R$ {{ salario_total|floatformat:2|default:'0,00' }}
+                </div>
+                
+    </div>
 
         <div class="section">
-            <h2 class="section-title">CASA </h2>
+            <h2 class="section-title" id="casa">CASA </h2>
+
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
                         <label>Aluguel:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="aluguel" placeholder="R$ 0,00" value="{{ aluguel|default_if_none:'' }}">
                         <label>Água:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="agua" placeholder="R$ 0,00" value="{{ agua|default_if_none:'' }}">
                         <label>Luz:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="luz" placeholder="R$ 0,00" value="{{ luz|default_if_none:'' }}">
                         <label>Gás:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="gas" placeholder="R$ 0,00" value="{{ gas|default_if_none:'' }}">
                         <label>Internet:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="internet" placeholder="R$ 0,00" value="{{ internet|default_if_none:'' }}">
                         <label>Telefone:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="telefone" placeholder="R$ 0,00" value="{{ telefone|default_if_none:'' }}">
                         <label>Serviços e Prestações:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="servicos_prestacoes" placeholder="R$ 0,00" value="{{ servicos_prestacoes|default_if_none:'' }}">
                         <label>Outros:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="outros_casa" placeholder="R$ 0,00" value="{{ outros_casa|default_if_none:'' }}">
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
@@ -55,30 +61,26 @@
                         </ul>
                     </div>
                 </div>
-                <div class="total-cost">
-                    GASTO TOTAL: R$ 0,00
-                </div>
+                <div class="total-cost">GASTO TOTAL: R$ {{ total_casa|floatformat:2|default:'0,00' }}</div>
+            
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">ALIMENTAÇÃO 🛡</h2>
+            <h2 class="section-title" id="alimentacao">ALIMENTAÇÃO 🛡</h2>
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
                         <label>Mercado:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="mercado" placeholder="R$ 0,00" value="{{ mercado|default_if_none:'' }}">
                         <label>Fora de Casa:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>Happy Hour:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>Padaria:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>Açougue:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="fora" placeholder="R$ 0,00" value="{{ fora|default_if_none:'' }}">
+                        <label>Hort Frut:</label>
+                        <input type="number" step="0.01" name="hort_frut" placeholder="R$ 0,00" value="{{ hort_frut|default_if_none:'' }}">
+                        <label>Feira:</label>
+                        <input type="number" step="0.01" name="feira" placeholder="R$ 0,00" value="{{ feira|default_if_none:'' }}">
                         <label>Outros:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                    </div>
+                        <input type="number" step="0.01" name="outros_alimentacao" placeholder="R$ 0,00" value="{{ outros_alimentacao|default_if_none:'' }}">
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
                         <div class="chart-placeholder"></div>
@@ -92,29 +94,28 @@
                         </ul>
                     </div>
                 </div>
-                <div class="total-cost">
-                    GASTO TOTAL: R$ 0,00
-                </div>
+                <div class="total-cost">GASTO TOTAL: R$ {{ total_alimentacao|floatformat:2|default:'0,00' }}</div>
+            
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">TRANSPORTE </h2>
+            <h2 class="section-title" id="transporte">TRANSPORTE </h2>
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
                         <label>Transporte público:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="publico" placeholder="R$ 0,00" value="{{ publico|default_if_none:'' }}">
                         <label>Gasolina:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="gasolina" placeholder="R$ 0,00" value="{{ gasolina|default_if_none:'' }}">
                         <label>Manutenção:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="manutencao" placeholder="R$ 0,00" value="{{ manutencao|default_if_none:'' }}">
                         <label>Seguro:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>App de transporte:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="seguro" placeholder="R$ 0,00" value="{{ seguro|default_if_none:'' }}">
+                        <label>Táxi/App:</label>
+                        <input type="number" step="0.01" name="taxi" placeholder="R$ 0,00" value="{{ taxi|default_if_none:'' }}">
                         <label>Outros:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="outros_transporte" placeholder="R$ 0,00" value="{{ outros_transporte|default_if_none:'' }}">
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
@@ -129,31 +130,30 @@
                         </ul>
                     </div>
                 </div>
-                <div class="total-cost">
-                    GASTO TOTAL: R$ 0,00
-                </div>
+                <div class="total-cost">GASTO TOTAL: R$ {{ total_transporte|floatformat:2|default:'0,00' }}</div>
+       
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">BELEZA E SAÚDE </h2>
+            <h2 class="section-title" id="saude-beleza">SAÚDE E BELEZA</h2>
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
-                        <label>Remédios:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <label>Farmácia:</label>
+                        <input type="number" step="0.01" name="farmacia" placeholder="R$ 0,00" value="{{ farmacia|default_if_none:'' }}">
                         <label>Plano de Saúde:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>Psicólogo:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>Produtos de higiene:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="plano" placeholder="R$ 0,00" value="{{ plano|default_if_none:'' }}">
+                        <label>Exames:</label>
+                        <input type="number" step="0.01" name="exames" placeholder="R$ 0,00" value="{{ exames|default_if_none:'' }}">
+                        <label>Produtos:</label>
+                        <input type="number" step="0.01" name="produtos" placeholder="R$ 0,00" value="{{ produtos|default_if_none:'' }}">
                         <label>Academia:</label>
-                        <input type="number" placeholder="R$ 0,00">
-                        <label>Salão/Barbearia:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="academia" placeholder="R$ 0,00" value="{{ academia|default_if_none:'' }}">
+                        <label>Salão:</label>
+                        <input type="number" step="0.01" name="salao" placeholder="R$ 0,00" value="{{ salao|default_if_none:'' }}">
                         <label>Outros:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="outros_saude_e_beleza" placeholder="R$ 0,00" value="{{ outros_saude_e_beleza|default_if_none:'' }}">
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
@@ -167,23 +167,23 @@
                         </ul>
                     </div>
                 </div>
-                <div class="total-cost">
-                    GASTO TOTAL: R$ 0,00
-                </div>
+                <div class="total-cost">GASTO TOTAL: R$ {{ total_saude_e_beleza|floatformat:2|default:'0,00' }}</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">EDUCAÇÃO </h2>
+            <h2 class="section-title" id="educacao">EDUCAÇÃO</h2>
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
                         <label>Mensalidade:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="mensalidade" placeholder="R$ 0,00" value="{{ mensalidade|default_if_none:'' }}">
+                        <label>Material Escolar:</label>
+                        <input type="number" step="0.01" name="material_escolar" placeholder="R$ 0,00" value="{{ material_escolar|default_if_none:'' }}">
                         <label>Cursos:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="cursos" placeholder="R$ 0,00" value="{{ cursos|default_if_none:'' }}">
                         <label>Outros:</label>
-                        <input type="number" placeholder="R$ 0,00">
+                        <input type="number" step="0.01" name="outros_educacao" placeholder="R$ 0,00" value="{{ outros_educacao|default_if_none:'' }}">
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
@@ -195,14 +195,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="total-cost">
-                    GASTO TOTAL: R$ 0,00
-                </div>
+                <div class="total-cost">GASTO TOTAL: R$ {{ total_educacao|floatformat:2|default:'0,00' }}</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="card" style="text-align: center;">
+                <button type="submit" class="calculate-btn" style="width: 80%; font-size: 1.2em; padding: 15px; margin-top: 20px;">Calcular Resultado Final</button>
+                <div class="total-cost" style="margin-top: 20px;">TOTAL DE DESPESAS: R$ {{ total_despesas|floatformat:2|default:'0,00' }}</div>
+                <div class="total-cost">SALARIO RESTANTE: R$ {{ resultado|floatformat:2|default:'0,00' }}</div>
             </div>
         </div>
     </div>
-    {% endblock %}
-    </main>
-
-</body>
-</html>
+    </form>
+</main>
+{% endblock %}

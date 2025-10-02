@@ -5,50 +5,55 @@
     <title>Easy Life - Login</title>
     <link rel="stylesheet" href="styles.css">
 {% endblock %}
+{% block main %}
 
-<body>
+<main class="login-container-2">
 
-    <main class="login-container-2">
-    {% block main %}
-        <h1 class="welcome-title">BEM-VINDO</h1>
-        
-        <div class="login-box">
-            <h2 class="login-title">LOGIN</h2>
-            
-            <form class="login-form">
-                <div class="dashed-border">
-                    <div class="input-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="">
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="password">Senha:</label>
-                        <input type="password" id="password" name="password" placeholder="">
-                    </div>
-                    
-                    <div class="form-footer">
-                        <a href="http://127.0.0.1:8000/usuario/login/">
-                            <link-button type="submit" class="button-primary-2">Entrar</button>
-                          </a>
+    <h1 class="welcome-title">BEM-VINDO</h1>
 
-                        <p class="no-account-text">Não tem conta?</p>
+    <div class="login-box">
+        <h2 class="login-title">LOGIN</h2>
 
-                        <a href="http://127.0.0.1:8000/usuario/cadastrar/">
-                            <link-button type="submit" class="button-secondary-2">Criar conta</button>
-                          </a>
-                    </div>
+        {# Bloco para exibir mensagens de erro #}
+        {% if messages %}
+            <div class="messages" style="padding: 10px; margin-bottom: 15px; border: 1px solid #c33; color: #c33; background-color: #fdd;">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form class="login-form" method="POST">
+            {% csrf_token %}
+            <div class="dashed-border">
+
+                <div class="input-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" placeholder="Digite seu usuário">
                 </div>
-            </form>
-        </div>
-    {% endblock %}
-    </main>
 
-    <footer>
-        {% block footer %}
-        <p> oii</p>
-        {% endblock %}
-    </footer>
+                <div class="input-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha">
+                </div>
 
-</body>
+                <div class="form-footer">
+                    <button type="submit" class="button-primary-2">Entrar</button>
+
+                    <p class="no-account-text">Não tem conta?</p>
+                    <a href="{% url 'cadastrar' %}" class="button-secondary-2">Criar conta</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+{% endblock %}
+</main>
+
+<footer>
+{% block footer %}
+    <p> oii</p>
+{% endblock %}
+</footer>
+
 </html>

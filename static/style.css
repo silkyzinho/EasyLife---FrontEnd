@@ -85,6 +85,7 @@
     color: #053F3D;
     font-style: italic;
 }
+
 /* HOME QUERIDA */
 body {
     font-family: Arial, sans-serif;
@@ -170,14 +171,14 @@ body {
 
 .content-box-1, .content-box-2 {
     background-color: #053F3D;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .easy-life-box {
-    height: 150px ;
+    height: 100px ;
     width: 389px;
     display: flex;
     justify-content: space-between;
@@ -195,7 +196,8 @@ body {
     background-color: #053F3D;
     color: #ffffff;
     padding: 5px 15px;
-    font-size: 1.8rem;
+    font-size: 10.8rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     position: relative;
     clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
@@ -204,6 +206,7 @@ body {
 .subtitle-2 {
     font-size: 1rem;
     color: #053F3D;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 10px;
 }
 
@@ -224,6 +227,7 @@ body {
 .placeholder-text {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1109,14 +1113,14 @@ body {
 .button-primary-2 {
     background: #ffffff;
     color: #053F3D;
-    border: 1px solid #053F3D;
+    border: 2px solid #053F3D;
     order: 1;
 }
 
 .button-secondary-2 {
     background: #ffffff;
     color: #053F3D;
-    border: 1px solid #053F3D;
+    border: 2px solid #053F3D;
     order: 3;
 }
 
