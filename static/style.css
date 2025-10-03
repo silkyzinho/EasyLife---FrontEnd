@@ -1,9 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .home-container-1 {
     width: 100%;
-    max-width: 450px; /* Largura similar a de um celular */
+    max-width: 900px; /* Largura similar a de um celular */
     text-align: center;
     padding: 15px;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -89,12 +95,14 @@
 /* HOME QUERIDA */
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
+    background: linear-gradient(140deg, #053f3d,#a3b88d,#d2e19d);
+    color: #2C3E50;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .button-primary-1, .button-secondary-1 {
@@ -128,7 +136,7 @@ body {
 
 /* Estilos para o cabeçalho (header) */
 .header {
-    width: 91%;
+    width: 95.4%;
     max-width: 100; /* Limite a largura para simular a imagem */
     display: flex;
     justify-content: space-between;
@@ -157,6 +165,9 @@ body {
 }
 
 /* Estilos para o conteúdo principal */
+main {
+    display: flex;
+}
 .main-content {
     width: 100%;
     max-width: 600px;
@@ -195,8 +206,8 @@ body {
 .ribbon-2 {
     background-color: #053F3D;
     color: #ffffff;
-    padding: 5px 15px;
-    font-size: 1.8rem;
+    padding: 5px 30px;
+    font-size: 2.5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     position: relative;
@@ -210,7 +221,7 @@ body {
     margin-top: 10px;
 }
 
-.piggy-image-1 {
+.piggy-image-home {
     width: 150px;
     height: auto;
 }
@@ -233,16 +244,6 @@ body {
 }
 
 /* HISTORICO FIA */
-body {
-    font-family: Arial, sans-serif;
-    background: #e0f2f1; /* Cor de fundo para simular a imagem */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* --- */
 /* Estilos do cabeçalho da página (Histórico) */
@@ -383,16 +384,6 @@ body {
 }
 
 /* COMPARAR FOFAH */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f2f1;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* --- */
 /* Estilos do cabeçalho da página (Comparar) */
@@ -562,16 +553,6 @@ body {
 }
 
 /* CALCULOS BIXA */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f2f1;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* --- */
 /* Estilos do cabeçalho */
@@ -725,15 +706,6 @@ body {
 
 /* Responsividade(CALCULOS BIXA) */
 /* Usando uma fonte pixelada para se assemelhar ao design */
-body {
-    background-color: #1e1e2f; /* Fundo escuro azulado/acinzentado */
-    color: #2c3e50; /* Cor de texto padrão */
-    font-family: 'VT323', monospace; /* Fonte pixelada */
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
 
 .container {
     width: 100%;
@@ -844,22 +816,13 @@ body {
 
 
 /* CADASTRAR HEIN PROSTITUTA VEM AQUI */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Cor de fundo escura */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* Container principal com duas colunas */
 .auth-container {
     width: 90%;
     max-width: 800px;
     display: flex;
+    flex-direction: column;
     border-radius: 15px;
     overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
@@ -885,17 +848,19 @@ body {
     max-width: 250px;
 }
 
-.piggy-image {
+.piggy-image-cadastrar {
     width: 200px;
-    margin-bottom: 20px;
-}
+    margin-bottom: 0px;
+} 
 
-.login-title {
+.login-title-cadastrar {
     font-size: 1.8rem;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    padding: 8px 30px;
     margin: 0 0 10px;
-    border: 3px solid #ffffff;
+    border: 3px solid #a3b88d;
+    border-radius: 30px;
 }
 
 .login-text {
@@ -914,7 +879,7 @@ body {
     background-color: #ffffff;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* --- */
@@ -977,7 +942,7 @@ body {
     background: #053F3D;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 4px 4px rgba(193, 193, 193, 0.71);
 }
 
 /* Responsividade(HEIN PROSTITUTA VEM AQUI) */
@@ -992,16 +957,6 @@ body {
 }
 
 /* LOGIN OH DENISE SAI DA LIVE FILHA */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #053F3D;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* Container principal e seus elementos */
 .login-container-2 {
@@ -1127,16 +1082,6 @@ body {
 /* LOGIN OH DENISE SAI DA LIVE FILHA FIM */
 
 /* PERFIL FULANO DE TOWN */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f2f1; /* Cor de fundo para simular a imagem */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* Container principal */
 .profile-container {
@@ -1281,16 +1226,6 @@ body {
 }
 
 /* BOAS VINDAS TICA (reutiliza o fundo dos cálculos)  */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f2f1;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-}
 
 /* --- */
 /* Estilos do Cabeçalho */
@@ -1364,7 +1299,7 @@ body {
     margin-top: 10px;
 }
 
-.piggy-image {
+.piggy-image-boas {
     width: 100px;
     height: auto;
 }
