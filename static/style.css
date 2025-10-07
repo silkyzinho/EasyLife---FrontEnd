@@ -3,11 +3,11 @@
     margin: 0;
 }
 
-.home-container-1 {
+.home-container {
     width: 100%;
     max-width: 900px; /* Largura similar a de um celular */
     text-align: center;
-    padding: 15px;
+    padding: 0px;
 }
 
 .header {
@@ -25,10 +25,9 @@
 
 .logo-banner {
     background-color: #ffffff;
-    border: 2px solid #053F3D;
+    border: 3px solid #053F3D;
     border-radius: 10px;
     padding: 20px;
-    margin-bottom: 30px;
 }
 
 .options-title {
@@ -165,10 +164,28 @@ body {
 }
 
 /* Estilos para o conteúdo principal */
-main {
-    display: flex;
-}
+
 .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content-row {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     max-width: 600px;
     padding: 20px;
@@ -188,13 +205,17 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.easy-life-box {
-    height: 100px ;
-    width: 389px;
+.easy-life-box-home {
+    background-color: #ffffff;
+    border: 4px solid #053F3D;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
+
 
 .easy-life-text {
     display: flex;
@@ -218,7 +239,7 @@ main {
     font-size: 1rem;
     color: #053F3D;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .piggy-image-home {
@@ -819,13 +840,15 @@ main {
 
 /* Container principal com duas colunas */
 .auth-container {
-    width: 90%;
-    max-width: 800px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 15px;
     overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
 
 /* --- */
@@ -838,10 +861,10 @@ main {
     display: flex;
     border: 3px solid #ffffff;
     border-radius: 10px;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
+    align-content: space-around;
+    flex-wrap: wrap;
 }
 
 .login-content {
@@ -891,10 +914,12 @@ main {
     border-radius: 10px;
     padding: 40px 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
+    align-content: space-around;
+    flex-wrap: wrap;
 }
 
 .register-content {
@@ -959,11 +984,16 @@ main {
 /* LOGIN OH DENISE SAI DA LIVE FILHA */
 
 /* Container principal e seus elementos */
-.login-container-2 {
+.login-container {
     width: 90%;
     max-width: 500px;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 .welcome-title {
@@ -972,6 +1002,7 @@ main {
     color: #053F3D;
     background: #ffffff;
     padding: 10px 30px;
+    margin: 20px;
     border: 5px solid #053F3D;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 30px;
@@ -1266,11 +1297,11 @@ main {
 }
 
 .easy-life-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border: 4px solid #053F3D;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1284,9 +1315,9 @@ main {
 }
 
 .ribbon {
-    background-color: #555;
+    background-color: #053F3D;
     color: #fff;
-    padding: 5px 15px;
+    padding: 5px 25px;
     font-size: 1.8rem;
     font-weight: bold;
     position: relative;
@@ -1295,12 +1326,12 @@ main {
 
 .subtitle {
     font-size: 1rem;
-    color: #666;
-    margin-top: 10px;
+    color: #053F3D;
+    margin-top: 5px;
 }
 
 .piggy-image-boas {
-    width: 100px;
+    width: 135px;
     height: auto;
 }
 
@@ -1311,15 +1342,15 @@ main {
 }
 
 .options-button {
-    padding: 12px 30px;
+    padding: 10px 35px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
-    background: #4a90e2;
-    border: none;
+    background: #053F3D;
+    border: 3px solid #ffffff;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .options-button .icon {
@@ -1330,7 +1361,7 @@ main {
 .category-buttons-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Duas colunas */
-    gap: 15px;
+    gap: 10px;
 }
 
 .category-button {
@@ -1339,23 +1370,38 @@ main {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background: #6a82fb; /* Cor de fundo padrão dos botões */
+    background: #053F3D; /* Cor de fundo padrão dos botões */
+    border: 3px solid #ffffff;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Botão de Transporte (largura total) */
 .full-width-button {
     grid-column: 1 / -1; /* Ocupa as duas colunas */
-    background: #4a90e2;
+    background: #053F3D;
+    color: #ffffff;
+    border: 3px solid #ffffff;
     margin-top: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Ajustes de cores para simular os ícones ou ênfase */
-.category-button:nth-child(1) { background: #5d92d4; } /* Casa */
-.category-button:nth-child(3) { background: #f29f05; } /* Alimentação */
-.category-button:nth-child(5) { background: #c94c4c; } /* Saúde & Beleza */
+.category-button:nth-child(1) { 
+    background: #053F3D;
+    border: 3px solid #ffffff;
+} /* Casa */
+
+.category-button:nth-child(3) { 
+    background: #053F3D; 
+    border: 3px solid #ffffff;
+} /* Alimentação */
+
+.category-button:nth-child(5) { 
+    background: #053F3D; 
+    border: 3px solid #ffffff;
+} /* Saúde & Beleza */
 
 /* Responsividade ( BOAS VINDAS TICA) */
 @media (max-width: 400px) {

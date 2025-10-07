@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="styles.css"> 
 {% endblock %}
 
-<body>
+<body>        
+    {% block main %}
     <main class="auth-container">
-        {% block main %}
             <div class="login-column">
                 <div class="login-content">
                     <img src="{% static 'logo.png' %}" alt="Porquinho-cofre" class="piggy-image-cadastrar">
@@ -39,9 +39,8 @@
                     </form>
                 </div>
             </div>
-        {% endblock %}
     </main>
-
+    {% endblock %}
     <footer>
         {% block footer %}
         <p> oii</p>
