@@ -6,8 +6,8 @@
     <title>Easy Life - Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     {% endblock %}
-
 </head>
+
 <body>
 
     <header class="header-dashboard">
@@ -23,7 +23,7 @@
                     <span class="ribbon">EASY LIFE</span>
                     <p class="subtitle">Calculadora de Gastos</p>
                 </div>
-                <img src="{% static 'logo.png' %}" alt="Porquinho-cofre com cartola e calculadora" class="piggy-image-boas">
+                <img src="{% static 'logo.png' %}" alt="Porquinho-cofre com cartola e calculadora" class="piggy-image">
             </div>
         </section>
         
@@ -48,14 +48,14 @@
             <a href="{% url 'calculos' %}#alimentacao" class="category-button">
                 ALIMENTAÇÃO
             </a>
-            <a href="" class="category-button">
+            <a href="{% url 'calculos' %}#extras" class="category-button">
                 EXTRAS
             </a>
 
-            <a href="{% url 'calculos' %}#alimentacao" class="category-button">
+            <a href="{% url 'calculos' %}#saude_e_beleza" class="category-button">
                 SAÚDE & BELEZA <span></span>
             </a>
-            <a href="" class="category-button">
+            <a href="{% url 'comparacao' %}" class="category-button">
                 COMPARAR
             </a>
 

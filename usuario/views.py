@@ -102,7 +102,7 @@ def criar_plano(request):
             request.user.perfil.plano = plano
             request.user.perfil.save()
 
-        return redirect('')  
+        return redirect('exibir_perfil')  
 
     return render(request, '')
 

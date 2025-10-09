@@ -58,6 +58,13 @@
         <div class="info-field">
             <a href="{% url 'logout' %}" class="action-button">Sair</a>
        </div>
+       <div class="info-field" style="margin-top: 20px;">
+        {% if usuario.plano %}
+            <a href="{% url 'exibir_plano' %}" class="action-button">Exibir Plano</a>
+        {% else %}
+            <a href="{% url 'criar_plano' %}" class="action-button">Criar Plano</a>
+        {% endif %}
+    </div>
        <div class="info-field" style="margin-top: 20px; text-align: center;">
         <form action="{% url 'excluir_usuario' %}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta? Esta ação é irreversível.');">
             {% csrf_token %}
