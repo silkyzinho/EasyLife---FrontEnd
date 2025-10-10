@@ -61,7 +61,14 @@ def boas_vindas(request):
 @login_required
 def exibir_perfil(request, id=None):
     # Busca o perfil do usuário
-    usuario, created = Usuario.objects.get_or_create(user=request.user)
+    usuario = Usuario()
+    user = User()
+    plano = Plano()
+    usuario.user = user
+    usuario.user.username = "Gustavo Ferreira"
+    usuario.plano = plano
+    usuario.plano.nome = "Gratuito"
+
     return render(request, 'exibir_perfil.html', {'usuario': usuario})
 
 @login_required

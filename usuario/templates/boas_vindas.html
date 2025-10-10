@@ -14,21 +14,20 @@
         <a href="" class="back-button">← BEM-VINDO(A)</a>
         <span class="user-greeting">Olá,  </span>
     </header>
-
-    <main class="main-content-dashboard">
-        {% block main %}
+{% block main %}
+    <main class="main-content-dashboard">  
         <section class="logo-section">
             <div class="easy-life-box">
                 <div class="easy-life-text">
                     <span class="ribbon">EASY LIFE</span>
                     <p class="subtitle">Calculadora de Gastos</p>
                 </div>
-                <img src="{% static 'logo.png' %}" alt="Porquinho-cofre com cartola e calculadora" class="piggy-image">
+                <img src="{% static 'logo.png' %}" alt="Porquinho-cofre com cartola e calculadora" class="piggy-image-boas">
             </div>
         </section>
         
         <div>
-            <a href="{% url 'exibir_perfil' %}" >Exibir perfil</a>
+            <a href="{% url 'exibir_perfil' %}" class="icon-profile" >Perfil</a>
         </div>
 
         <section class="options-menu">
@@ -38,41 +37,40 @@
         </section>
 
         <section class="category-buttons-grid">
-            <a href="{% url 'calculos' %}#casa" class="category-button">
+            <a href="{% url 'calculos' %}#casa" class="category-button-casa">
                 CASA <span></span>
             </a>
-            <a href="{% url 'calculos' %}#educacao" class="category-button">
-                EDUCAÇÃO
+            <a href="{% url 'calculos' %}#educacao" class="category-button-educacao">
+                EDUCAÇÃO <span></span>
             </a>
 
-            <a href="{% url 'calculos' %}#alimentacao" class="category-button">
-                ALIMENTAÇÃO
+            <a href="{% url 'calculos' %}#alimentacao" class="category-button-alimentacao">
+                ALIMENTAÇÃO <span></span>
             </a>
-            <a href="{% url 'calculos' %}#extras" class="category-button">
-                EXTRAS
+            <a href="{% url 'calculos' %}#extras" class="category-button-extras">
+                EXTRAS <span></span>
             </a>
 
-            <a href="{% url 'calculos' %}#saude_e_beleza" class="category-button">
+            <a href="{% url 'calculos' %}#saude_e_beleza" class="category-button-saude-beleza">
                 SAÚDE & BELEZA <span></span>
             </a>
-            <a href="{% url 'comparacao' %}" class="category-button">
-                COMPARAR
+            <a href="{% url 'comparacao' %}" class="category-button-comparar">
+                COMPARAR <span></span>
             </a>
 
-            <a href="{% url 'calculos' %}#transporte" class="category-button full-width-button">
-                TRANSPORTE
+            <a href="{% url 'calculos' %}#transporte" class="category-button-transporte">
+                TRANSPORTE <span></span>
             </a>
         </section>
         <div>
-            <p class="no-account-text">Sem uma categoria especifica:</p>
-            <a href="{% url 'calculos' %}" >Calcular</a>
+            <p class="no-account-text-boas">Sem uma categoria especifica:</p>
+            <a href="{% url 'calculos' %}" class="no-category-button">Calcular</a>
                
         </div>
         <div class="info-field">
-            <a href="{% url 'logout' %}" class="action-button">Sair</a>
+            <a href="{% url 'logout' %}" class="action-button-boas">Sair</a>
        </div>
-        {% endblock %}
     </main>
-
+{% endblock %}
 </body>
 </html>

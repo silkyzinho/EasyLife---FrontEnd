@@ -1190,7 +1190,7 @@ body {
     gap: 10px;
 }
 
-.action-button {
+.action-button-perfil {
     padding: 10px 15px;
     font-size: 0.9rem;
     color: #333;
@@ -1288,6 +1288,7 @@ body {
     max-width: 600px;
     padding: 20px;
     box-sizing: border-box;
+    display: inline-block;
 }
 
 /* Bloco do Logo/Título Central */
@@ -1335,10 +1336,48 @@ body {
     height: auto;
 }
 
+.icon-profile {
+    background: #ffffff;
+    border: 3px solid #053F3D;
+    border-radius: 30px;
+    padding: 20px;
+    text-decoration: none;
+    color: #053F3D;
+    font-weight: bold;
+}
+
 /* Botão de Opções */
 .options-menu {
     text-align: center;
+    margin-top: 40px;
     margin-bottom: 20px;
+}
+
+.no-category-button {
+    background-color: #053F3D;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.no-account-text-boas {
+    color: #ffffff;
+    padding: 10px;
+}
+
+.action-button-boas {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #053F3D;
+    background-color: #ffffff;
+    border: 2px solid #053F3D;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .options-button {
@@ -1360,7 +1399,6 @@ body {
 /* Grade de Botões de Categorias */
 .category-buttons-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas */
     gap: 10px;
 }
 
@@ -1377,31 +1415,68 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Botão de Transporte (largura total) */
-.full-width-button {
-    grid-column: 1 / -1; /* Ocupa as duas colunas */
+.category-button-casa { 
+    background: #053F3D;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Casa */
+
+.category-button-educacao { 
     background: #053F3D;
     color: #ffffff;
     border: 3px solid #ffffff;
-    margin-top: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Educação */
 
-/* Ajustes de cores para simular os ícones ou ênfase */
-.category-button:nth-child(1) { 
+.category-button-alimentacao { 
+    background: #053F3D; 
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Alimentação*/
+
+.category-button-extras { 
     background: #053F3D;
     border: 3px solid #ffffff;
-} /* Casa */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Extras */
 
-.category-button:nth-child(3) { 
+.category-button-saude-beleza { 
+    background: #053F3D;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Sáude e Beleza */
+
+.category-button-comparar { 
+    background: #053F3D;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Comparar */
+
+.category-button-transporte { 
     background: #053F3D; 
     border: 3px solid #ffffff;
-} /* Alimentação */
-
-.category-button:nth-child(5) { 
-    background: #053F3D; 
-    border: 3px solid #ffffff;
-} /* Saúde & Beleza */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+} /* Transporte */
 
 /* Responsividade ( BOAS VINDAS TICA) */
 @media (max-width: 400px) {
