@@ -989,11 +989,9 @@ body {
     max-width: 500px;
     text-align: center;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     align-items: center;
     align-content: center;
-    flex-wrap: wrap;
 }
 
 .welcome-title {
@@ -1138,25 +1136,26 @@ body {
 
 .profile-title {
     font-size: 1.5rem;
-    color: #fff;
-    background: linear-gradient(to right, #6a82fb, #4a90e2);
+    color: #ffffff;
+    background: linear-gradient(to right, #053F3D, #a3b88d);
     padding: 10px 20px;
+    border: 2px solid #ffffff;
     border-radius: 20px;
     display: inline-block;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
 }
 
 /* Seção de foto de perfil */
 .profile-photo-section {
     padding: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 3px solid #ffffff;
     margin-bottom: 20px;
 }
 
 .section-subtitle {
-    font-size: 1rem;
-    color: #a9ccaa;
+    font-size: 2rem;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
@@ -1170,7 +1169,7 @@ body {
 .photo-placeholder {
     width: 100px;
     height: 100px;
-    border: 1px solid #ccc;
+    border: 2px solid #ffffff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1185,9 +1184,25 @@ body {
 }
 
 .photo-buttons {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.action-button-foto-AL {
+    background: #053F3D;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.action-button-foto-RE {
+    background: #053F3D;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 .action-button-perfil {
@@ -1213,9 +1228,10 @@ body {
 .info-field label {
     display: block;
     font-size: 0.9rem;
-    color: #888;
+    color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .input-and-button {
@@ -1226,18 +1242,18 @@ body {
 .input-and-button input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 3px solid #053F3D;
     border-radius: 20px;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #ffffff;
+    color: #2c2c2c;
 }
 
 .edit-button {
     padding: 8px 15px;
-    font-size: 0.8rem;
-    color: #4a90e2;
-    background-color: #fff;
-    border: 1px solid #4a90e2;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background-color: #053F3D;
+    border: 3px solid #ffffff;
     border-radius: 20px;
     cursor: pointer;
     margin-left: 10px;
@@ -1365,7 +1381,7 @@ body {
 }
 
 .no-account-text-boas {
-    color: #ffffff;
+    color: #053F3D;
     padding: 10px;
 }
 
