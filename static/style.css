@@ -733,7 +733,7 @@ body {
 .container {
     width: 100%;
     max-width: 450px; /* Largura máxima para simular a tela de um celular */
-    display: inline-flex;
+    display: inline-block;
 }
 
 .section-title {
@@ -749,6 +749,7 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
     display: inline-block;
+    margin-left: 50px;
 }
 
 .section-title-carteira {
@@ -764,6 +765,7 @@ body {
     margin-bottom: 20px;
     margin-top: 20px;
     display: inline-block;
+    margin-left: 50px;
 }
 
 .title-carteira {
@@ -772,6 +774,7 @@ body {
 }
 
 .card {
+    width: 457px;
     background-color: #ffffff; /* Fundo verde-claro/bege para os cards */
     border: 3px solid #053F3D; /* Borda escura */
     border-radius: 10px;
@@ -781,6 +784,7 @@ body {
 }
 
 .card-carteira {
+    width: 99%;
     background-color: #ffffff; /* Fundo verde-claro/bege para os cards */
     border: 3px solid #053F3D; /* Borda escura */
     border-radius: 15px;
@@ -804,6 +808,7 @@ body {
 .form-inputs label {
     margin-top: 10px;
     font-weight: bold;
+    color: #053F3D;
 }
 
 .infos-carteiras {
@@ -813,8 +818,8 @@ body {
 }
 
 .form-inputs input {
-    background-color: #f0f6e8;
-    border: 2px solid #2c3e50;
+    background-color: #ffffff;
+    border: 3px solid #053F3D;
     border-radius: 5px;
     padding: 8px;
     font-family: 'VT323', monospace;
@@ -856,15 +861,16 @@ body {
 }
 
 .total-cost {
-    background-color: #4a5d6a;
+    background-color: #053F3D;
     color: #ffffff;
-    border: 2px solid #2c3e50;
+    border: 3px solid #ffffff;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
     font-weight: bold;
     margin-top: 15px;
     font-size: 20px;
+    border-style: outset;
 }
 
 /* Estilo específico para o card de "CARTEIRA" */
@@ -872,6 +878,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 10px;
+    color: #053F3D;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
