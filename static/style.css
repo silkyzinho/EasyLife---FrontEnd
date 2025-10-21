@@ -154,7 +154,7 @@ body {
     text-align: center;
 }
 
-.header-nav-1 .nav-button-1 {
+.header-nav .nav-button {
     padding: 10px 15px;
     margin-left: 10px;
     border: 1px solid #ffffff;
@@ -796,7 +796,7 @@ body {
 .content-wrapper {
     display: flex;
     gap: 15px; /* Espaço entre inputs e estatísticas */
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .form-inputs {
@@ -881,6 +881,17 @@ body {
     color: #053F3D;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.calculate-btn {
+    width: 80%; 
+    font-size: 1.2em; 
+    padding: 15px; 
+    margin-top: 20px;
+    border: 2px solid #053F3D;
+    border-radius: 5px;
+}
+
+/* Calculos BIXA */
 
 
 /* CADASTRAR HEIN PROSTITUTA VEM AQUI */
@@ -1343,10 +1354,14 @@ body {
     padding: 20px 20px 0;
 }
 
-.back-button {
-    font-size: 1rem;
+.bem-vindo-let {
+    font-size: xx-large;
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff,
+    0 0 20px #ffffff;
 }
 
 .user-greeting {
@@ -1373,14 +1388,16 @@ body {
 
 .easy-life-box {
     background-color: #ffffff;
-    border: 4px solid #053F3D;
+    border: 15px solid #053F3D;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
+    border-left-width: thin;
+    border-right-width: thin;
 }
 
 .easy-life-text {
@@ -1392,12 +1409,16 @@ body {
 
 .ribbon {
     background-color: #053F3D;
-    color: #fff;
+    color: #ffffff;
     padding: 5px 25px;
     font-size: 1.8rem;
     font-weight: bold;
     position: relative;
     clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff,
+    0 0 20px #ffffff;
 }
 
 .subtitle {

@@ -29,7 +29,6 @@
 
         <div class="section">
             <h2 class="section-title" id="casa">CASA</h2>
-
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
@@ -81,6 +80,7 @@
                         <input type="number" step="0.01" name="feira" placeholder="R$ 0,00" value="{{ feira|default_if_none:'' }}">
                         <label>Outros:</label>
                         <input type="number" step="0.01" name="outros_alimentacao" placeholder="R$ 0,00" value="{{ outros_alimentacao|default_if_none:'' }}">
+                    </div>    
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
                         <div class="chart-placeholder"></div>
@@ -95,7 +95,6 @@
                     </div>
                 </div>
                 <div class="total-cost">GASTO TOTAL: R$ {{ total_alimentacao|floatformat:2|default:'0,00' }}</div>
-            
             </div>
         </div>
 
@@ -200,7 +199,7 @@
         </div>
         <div class="section">
             <div class="card" style="text-align: center;">
-                <button type="submit" class="calculate-btn" style="width: 80%; font-size: 1.2em; padding: 15px; margin-top: 20px;">Calcular Resultado Final</button>
+                <button type="submit" class="calculate-btn">Calcular Resultado Final</button>
                 <div class="total-cost" style="margin-top: 20px;">TOTAL DE DESPESAS: R$ {{ total_despesas|floatformat:2|default:'0,00' }}</div>
                 <div class="total-cost">SALARIO RESTANTE: R$ {{ resultado|floatformat:2|default:'0,00' }}</div>
             </div>
