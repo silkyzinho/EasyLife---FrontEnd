@@ -1393,7 +1393,7 @@ body {
     padding: 30px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 50px;
     border-left-width: thin;

@@ -7,14 +7,15 @@
 {% endblock %}
 
 <body>
-
+    {% block header %}
     <header class="header-history">
         <a href="#" class="back-button">←</a>
         <h1 class="history-title">HISTÓRICO</h1>
     </header>
+    {% endblock %}
 
-    <main class="main-content-history">
     {% blcok main %}
+    <main class="main-content-history">
         <div class="top-controls">
             <button class="control-button select-button">
                 SELECIONAR
@@ -52,9 +53,9 @@
             </div>
 
             </div>
-    {% endblock %}
     </main>
-        
+{% endblock %}
+
     <footer>
         {% block footer %}
         <p> oii</p>
