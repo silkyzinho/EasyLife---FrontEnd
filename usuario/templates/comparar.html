@@ -8,82 +8,85 @@
 {% endblock %}
 
 <body>
-
+    {% block header %}
     <header class="header-compare">
-        <a href="#" class="back-button">←</a>
-        <button class="compare-button">
+        <h1 class="compare-title">
             COMPARAR
             <span class="icon"></span>
-        </button>
+        </h2>
     </header>
+    {% endblock%}
 
     <main class="main-content-compare">
         {% block main %}
+        <a href="{% url 'boas_vindas' %}" class="back-button">←</a>
         <section class="chart-section">
-            <div class="chart-box">
-                <p class="chart-title">Mês</p>
-                <div class="bar-chart-container" id="monthly-chart">
-                    </div>
-            </div>
-
-            <div class="chart-box">
-                <p class="chart-title">Ano</p>
-                <div class="bar-chart-container" id="yearly-chart">
-                    </div>
-            </div>
-        </section>
-
-        <section class="details-section">
-            <div class="details-header">
+            
                 <h2 class="details-title">Valores e Gastos</h2>
             </div>
-            
-            <div class="details-content">
-                <div class="expenses-table">
-                    <div class="table-row table-header-row">
-                        <span class="cell-category">CASA</span>
-                        <span class="cell-label">VALOR</span>
-                        <span class="cell-value">R$ 0,00</span>
+            <form method="post" action="{% url 'comparacao' %}">
+                {% csrf_token %}
+                <label for="ano">Ano:</label>
+                <input type="number" name="ano" id="ano" required>
+                <label for="mes">Mês:</label>
+                <input type="number" name="mes" id="mes" required>
+                <button type="submit">Buscar</button>
+            </form>
+            {% if request.method == 'POST' %}
+                {% if calculos %}
+                <div class="details-content">
+                    <div class="expenses-table">
+                        {% for calculo in calculos %}
+                        <span class="item-date">{{ calculo.data_criacao|date:"d/m/Y" }}</span>
+                        <div class="table-row table-header-row">
+                            <span class="cell-category">CASA</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.dados_calculo.total_casa|default:0 }}</span>
+                        </div>
+                        <div class="table-row">
+                            <span class="cell-category">ALIMENTAÇÃO</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.dados_calculo.total_alimentacao|default:0 }}</span>
+                        </div>
+                        <div class="table-row">
+                            <span class="cell-category">SAÚDE</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.dados_calculo.total_saude_e_beleza|default:0 }}</span>
+                        </div>
+                        <div class="table-row">
+                            <span class="cell-category">TRANSPORTE</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.dados_calculo.total_transporte|default:0 }}</span>
+                        </div>
+                        <div class="table-row">
+                            <span class="cell-category">EDUCAÇÃO</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.dados_calculo.total_educacao|default:0 }}</span>
+                        </div>
+                        <div class="table-row">
+                            <span class="cell-category">EXTRAS</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.dados_calculo.total_extras|default:0 }}</span>
+                        </div>
+                        <div class="table-row table-header-row">
+                            <span class="cell-category">TOTAL DESPESAS</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.total_despesas }}</span>
+                        </div>
+                        <div class="table-row table-header-row">
+                            <span class="cell-category">SALÁRIO RESTANTE</span>
+                            <span class="cell-label">VALOR</span>
+                            <span class="cell-value">R$ {{ calculo.resultado_final }}</span>
+                        </div> <br> <br>
+                        {% endfor %}
                     </div>
-                    <div class="table-row">
-                        <span class="cell-category">ALIMENTAÇÃO</span>
-                        <span class="cell-label">VALOR</span>
-                        <span class="cell-value">R$ 0,00</span>
-                    </div>
-                    <div class="table-row">
-                        <span class="cell-category">SAÚDE</span>
-                        <span class="cell-label">VALOR</span>
-                        <span class="cell-value">R$ 0,00</span>
-                    </div>
-                    <div class="table-row">
-                        <span class="cell-category">TRANSPORTE</span>
-                        <span class="cell-label">VALOR</span>
-                        <span class="cell-value">R$ 0,00</span>
-                    </div>
-                    <div class="table-row">
-                        <span class="cell-category">EDUCAÇÃO</span>
-                        <span class="cell-label">VALOR</span>
-                        <span class="cell-value">R$ 0,00</span>
-                    </div>
-                    <div class="table-row">
-                        <span class="cell-category">EXTRAS</span>
-                        <span class="cell-label">VALOR</span>
-                        <span class="cell-value">R$ 0,00</span>
-                    </div>
+                    <div class="pie-chart-container" id="pie-chart">
+                        </div>
                 </div>
-
-                <div class="pie-chart-container" id="pie-chart">
-                    </div>
-            </div>
+                {% else %}
+                    <p>Não existem cálculos para o mês e ano selecionados.</p>
+                {% endif %}
+            {% endif %}
         </section>
     {% endblock %}
     </main>
-    
-    <footer>
-        {% block footer %}
-        <p> oii</p>
-        {% endblock %}
-    </footer>
-
-</body>
-</html>

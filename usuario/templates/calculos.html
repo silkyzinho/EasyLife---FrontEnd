@@ -8,12 +8,13 @@
 {% endblock %}
 {% block main %}
 <main>
+    <a href="{% url 'boas_vindas' %}" class="back-button-calculos">←</a>
     <form method="POST" action="{% url 'calculos' %}">
     {% csrf_token %}
     <div class="container">
         <div class="section">
-            <h2 class="section-title-carteira">SALÁRIO</h2>
-            <div class="card-carteira">
+            <h2 class="section-title">SALÁRIO</h2>
+            <div class="card">
                 <h3 class="title-carteira">CARTEIRA WALLET</h3>
                 <div class="form-inputs">
                     <label class="infos-carteiras">Salário:</label>
@@ -80,7 +81,7 @@
                         <input type="number" step="0.01" name="feira" placeholder="R$ 0,00" value="{{ feira|default_if_none:'' }}">
                         <label>Outros:</label>
                         <input type="number" step="0.01" name="outros_alimentacao" placeholder="R$ 0,00" value="{{ outros_alimentacao|default_if_none:'' }}">
-                    </div>    
+                    </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
                         <div class="chart-placeholder"></div>
@@ -135,7 +136,7 @@
         </div>
 
         <div class="section">
-            <h2 class="section-title" id="saude-beleza">SAÚDE E BELEZA</h2>
+            <h2 class="section-title" id="saude_e_beleza">SAÚDE E BELEZA</h2>
             <div class="card">
                 <div class="content-wrapper">
                     <div class="form-inputs">
@@ -198,12 +199,53 @@
             </div>
         </div>
         <div class="section">
-            <div class="card" style="text-align: center;">
-                <button type="submit" class="calculate-btn">Calcular Resultado Final</button>
-                <div class="total-cost" style="margin-top: 20px;">TOTAL DE DESPESAS: R$ {{ total_despesas|floatformat:2|default:'0,00' }}</div>
-                <div class="total-cost">SALARIO RESTANTE: R$ {{ resultado|floatformat:2|default:'0,00' }}</div>
+            <h2 class="section-title" id="extras">EXTRAS</h2>
+            <div class="card">
+                <div class="content-wrapper">
+                    <div class="form-inputs">
+                        <label>Viagens:</label>
+                        <input type="number" step="0.01" name="viagens" placeholder="R$ 0,00" value="{{ viagens|default_if_none:'' }}">
+                        <label>Roupas:</label>
+                        <input type="number" step="0.01" name="roupas" placeholder="R$ 0,00" value="{{ roupas|default_if_none:'' }}">
+                        <label>Cinema:</label>
+                        <input type="number" step="0.01" name="cinema" placeholder="R$ 0,00" value="{{ cinema|default_if_none:'' }}">
+                        <label>Shows:</label>
+                        <input type="number" step="0.01" name="shows" placeholder="R$ 0,00" value="{{ shows|default_if_none:'' }}">
+                        <label>Festas:</label>
+                        <input type="number" step="0.01" name="festas" placeholder="R$ 0,00" value="{{ festas|default_if_none:'' }}">
+                        <label>Presentes:</label>
+                        <input type="number" step="0.01" name="presentes" placeholder="R$ 0,00" value="{{ presentes|default_if_none:'' }}">
+                        <label>Animais:</label>
+                        <input type="number" step="0.01" name="animais" placeholder="R$ 0,00" value="{{ animais|default_if_none:'' }}">
+                        <label>Outros:</label>
+                        <input type="number" step="0.01" name="outros_extras" placeholder="R$ 0,00" value="{{ outros_extras|default_if_none:'' }}">
+                    </div>
+                    <div class="stats">
+                        <h3>ESTATÍSTICAS</h3>
+                        <div class="chart-placeholder"></div>
+                        <ul class="legend">
+                            <li>■ Viagens</li>
+                            <li>■ Roupas</li>
+                            <li>■ Lazer</li>
+                            <li>■ Presentes</li>
+                            <li>■ Animais</li>
+                            <li>■ Outros</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="total-cost">GASTO TOTAL: R$ {{ total_extras|floatformat:2|default:'0,00' }}</div>
             </div>
         </div>
+        <div class="section">
+            <div class="card" style="text-align: center;">
+                <button type="submit" class="calculate-btn">Calcular Resultado Final</button>
+                <div class="total-cost">TOTAL DE DESPESAS: R$ {{ total_despesas|floatformat:2|default:'0,00' }}</div>
+                <div class="total-cost">SALARIO RESTANTE: R$ {{ resultado|floatformat:2|default:'0,00' }}</div>
+            </div>
+        </div> 
+        <button-link>
+            <a href="{% url 'historico' %}" class="button-ir-historico">Historico</a>
+        </button-link>
     </div>
     </form>
 </main>

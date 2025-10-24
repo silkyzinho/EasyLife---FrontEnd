@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Criar Novo Plano</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <a href="{% url 'exibir_perfil' %}" class="back-button">←</a>
+        <div class="info-field">
+            <label for="nome">Nome:</label>
+            <div class="input-and-button">
+                <input type="nome" id="nome" name="nome" value="plano: EasyLife" disabled>
+            </div>
+        </div>
+        <div class="info-field">
+            <label for="valor">Valor:</label>
+            <div class="input-and-button">
+                <input type="nome" id="nome" name="nome" value="$10,00" disabled>
+            </div>
+        </div>
+        <div class="info-field">
+            <label for="prazo">Prazo:</label>
+            <div class="input-and-button">
+                <input type="nome" id="nome" name="nome" value="1 mês" disabled>
+            </div>
+        </div>
+        <button type="submit">Confirmar</button>
+    </form>
+</main>
+{% endblock %}

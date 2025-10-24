@@ -63,17 +63,55 @@ def exibir_perfil(request, id=None):
     # Busca o perfil do usuário
     usuario = Usuario()
     user = User()
-    plano = Plano()
+    
     usuario.user = user
     usuario.user.username = "Gustavo Ferreira"
-    usuario.plano = plano
-    usuario.plano.nome = "Gratuito"
-
+    
     return render(request, 'exibir_perfil.html', {'usuario': usuario})
 
 @login_required
-def editar_usuario(request):
-    pass
+def editar_perfil(request):
+    user = request.user
+    if request.method == 'POST':
+        form = CadastrarForm(request.POST)
+        
+        form.fields['password'].required = False
+        form.fields['password_confirm'].required = False
+        
+        new_username = request.POST.get('username')
+        new_email = request.POST.get('email')
+
+        if User.objects.filter(username=new_username).exclude(pk=user.pk).exists():
+            messages.error(request, 'Este nome de usuário já está em uso.')
+        
+        elif form.is_valid():
+            user.username = new_username
+            user.email = new_email
+            user.save()
+            return redirect('exibir_perfil')
+    
+    form = CadastrarForm(initial={'username': user.username, 'email': user.email})
+    form.fields['password'].required = False
+    form.fields['password_confirm'].required = False
+    return render(request, 'editar_perfil.html', {'form': form})
+
+@login_required
+def alterar_foto(request):
+    if request.method == 'POST':
+        usuario = get_object_or_404(Usuario, user=request.user)
+        picture = request.FILES.get('picture')
+        if picture:
+            usuario.picture = picture
+            usuario.save()
+    return redirect('exibir_perfil')
+
+@login_required
+def remover_foto(request):
+    usuario = get_object_or_404(Usuario, user=request.user)
+    if request.method == 'POST':
+        if usuario.picture:
+            usuario.picture.delete()
+    return redirect('exibir_perfil')
 
 @login_required
 def excluir_usuario(request):
@@ -111,7 +149,7 @@ def criar_plano(request):
 
         return redirect('exibir_perfil')  
 
-    return render(request, '')
+    return render(request, 'criar_plano.html')
 
 def is_usuario_plano(user):
     return hasattr(user, 'perfil') and user.perfil.plano is not None
@@ -124,10 +162,11 @@ def exibir_plano(request):
 
 @user_passes_test(is_usuario_plano)
 @login_required
-def excluir_plano(request):
-    plano = get_object_or_404(Plano)
+def cancelar_plano(request):
+    usuario = get_object_or_404(Usuario, user=request.user)
     if request.method == 'POST':
-        plano.delete()
-        messages.success(request, 'Plano excluído com sucesso!')
-        return redirect('')
-    return render(request, '', {'plano': plano})
+        usuario.plano = None
+        usuario.save()
+        messages.success(request, 'Seu plano foi cancelado.')
+        return redirect('exibir_perfil')
+    return render(request, 'cancelar_plano.html', {'plano': usuario.plano})

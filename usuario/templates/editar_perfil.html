@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Easy Life - Editar Perfil</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+{% endblock %}
+
+{% block main %}
+    <main class="profile-container">
+        <a href="{% url 'exibir_perfil' %}" class="back-button">← Cancelar</a>
+        <h1 class="profile-title">EDITAR PERFIL</h1>
+
+        {# Exibe mensagens de erro, se houver #}
+        {% if form.errors %}
+            <div style="padding: 1rem; margin-bottom: 1rem; background-color: #f8d7da; color: #721c24; text-align: left; border-radius: 5px;">
+                <strong>Por favor, corrija os seguintes erros:</strong>
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ field.label }}: {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {# Formulário de edição de nome e email #}
+        <form method="POST" action="{% url 'editar_perfil' %}" novalidate>
+            {% csrf_token %}
+            <section class="profile-info-section">
+                <div class="info-field">
+                    <label for="{{ form.username.id_for_label }}">Nome:</label>
+                    <div class="input-and-button">
+                        {{ form.username }}
+                    </div>
+                </div>
+
+                <div class="info-field">
+                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                    <div class="input-and-button">
+                        {{ form.email }}
+                    </div>
+                </div>
+                
+            </section>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" class="action-button">Salvar Alterações</button>
+            </div>
+        </form>
+
+    </main>
+{% endblock %}
