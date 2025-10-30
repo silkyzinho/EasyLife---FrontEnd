@@ -1,6 +1,5 @@
 * {
     padding: 0;
-    margin: 0;
 }
 
 .home-container {
@@ -27,6 +26,7 @@
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .options-title {
@@ -92,9 +92,9 @@
 
 /* HOME QUERIDA */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(140deg, #053f3d,#a3b88d,#d2e19d,#053f3d);
-    color: #2C3E50;
+    color: #212121;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +111,8 @@ body {
     0 0 10px #ffffff,
     0 0 20px #ffffff;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
-    border-style: outset;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
 }
 
 .button-primary-1 {
@@ -119,8 +120,8 @@ body {
     color: #ffffff;
     border: 3px solid #ffffff;
     border-radius: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
+    font-size: x-large;
+    border-style: outset;
 }
 
 .button-secondary-1 {
@@ -128,8 +129,8 @@ body {
     color: #ffffff;
     border: 3px solid #ffffff;
     border-radius: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
+    font-size: x-large;
+    border-style: outset;
 }
 
 /* Estilos para o cabeçalho (header) */
@@ -149,10 +150,12 @@ body {
     color: #ffffff;
     align-items: center;
     text-align: center;
+    font-weight: 500;
     text-shadow:
     0 0 5px #ffffff,
     0 0 10px #ffffff,
     0 0 20px #ffffff;
+    animation: piscaNeon 1.5s infinite;
 }
 
 .header-nav .nav-button {
@@ -229,7 +232,7 @@ body {
     background-color: #053F3D;
     padding: 15px 80px;
     font-size: xxx-large;
-    font-weight: bold;
+    font-weight: 600;
     position: relative;
     clip-path: polygon(0% 0%, 100% 0%, 95% 50%, 100% 100%, 0% 100%, 5% 50%);
     animation: piscaNeon 1.5s infinite;
@@ -913,14 +916,12 @@ body {
 .auth-container {
     display: flex;
     flex-direction: row;
-    border-radius: 15px;
-    overflow: hidden; /* Garante que as bordas arredondadas sejam aplicadas */
+    border-radius: 50px; /* Garante que as bordas arredondadas sejam aplicadas */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     align-content: space-around;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
-
 }
 
 /* --- */
@@ -932,7 +933,9 @@ body {
     padding: 40px 20px;
     display: flex;
     border: 3px solid #ffffff;
-    border-radius: 10px;
+    border-right: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
@@ -948,14 +951,15 @@ body {
 } 
 
 .login-title-cadastrar {
-    font-size: 1.8rem;
+    font-size: xxx-large;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    padding: 8px 30px;
     text-shadow:
     0 0 5px #ffffff,
     0 0 10px #ffffff,
     0 0 20px #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .login-text {
@@ -966,12 +970,6 @@ body {
     0 0 5px #ffffff,
     0 0 10px #ffffff,
     0 0 20px #ffffff;
-}
-
-.foto-de-perfil {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #053F3D;
 }
 
 .button-primary-3 {
@@ -995,7 +993,9 @@ body {
     flex: 1;
     background-color: #ffffff; /* Cor de fundo clara do lado direito */
     border: 2px solid #ffffff;
-    border-radius: 10px;
+    border-left: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
     padding: 40px 20px;
     display: flex;
     flex-direction: row;
@@ -1011,14 +1011,14 @@ body {
 }
 
 .register-title {
-    font-size: 1.5rem;
+    font-size: xx-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     color: #053F3D;
     margin: 0 0 5px;
 }
 
 .register-subtitle {
-    font-size: 0.9rem;
+    font-size: large;
     color: #a6a6a6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 30px;
@@ -1175,7 +1175,7 @@ body {
 }
 
 .no-account-text {
-    font-size: 0.8rem;
+    font-size: large;
     color: #053F3D;
     order: 2;
     margin: 10px auto;
@@ -1506,6 +1506,7 @@ body {
 }
 
 .no-account-text-boas {
+    font-size: large;
     color: #053F3D;
     padding: 10px;
 }
@@ -1523,9 +1524,13 @@ body {
 
 .options-button {
     padding: 10px 35px;
-    font-size: 1.2rem;
+    font-size: xxx-large;
     font-weight: bold;
     color: #fff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
     background: #053F3D;
     border: 3px solid #ffffff;
     border-radius: 20px;
@@ -1561,7 +1566,13 @@ body {
     background: #053F3D;
     border: 3px solid #ffffff;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-weight: 500;
+    font-family: 'Monstserrat', sans-serif;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -1571,8 +1582,14 @@ body {
 .category-button-educacao { 
     background: #053F3D;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
     border: 3px solid #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -1583,7 +1600,13 @@ body {
     background: #053F3D; 
     border: 3px solid #ffffff;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -1594,7 +1617,13 @@ body {
     background: #053F3D;
     border: 3px solid #ffffff;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -1605,7 +1634,13 @@ body {
     background: #053F3D;
     border: 3px solid #ffffff;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -1616,7 +1651,13 @@ body {
     background: #053F3D;
     border: 3px solid #ffffff;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -1627,7 +1668,13 @@ body {
     background: #053F3D; 
     border: 3px solid #ffffff;
     color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
     text-decoration: none;
+    font-size: x-large;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
