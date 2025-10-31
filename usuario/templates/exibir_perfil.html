@@ -9,12 +9,12 @@
 
     <main class="profile-container">
         {% block main %}
-        <a href="{% url 'boas_vindas' %}" class="back-button">←</a>
-        <h1 class="profile-title">SEU PERFIL</h1>
+        <a href="{% url 'boas_vindas' %}" class="back-button-perfil">←</a>
+        <h1 class="profile-title">PERFIL</h1>
 
         <section class="profile-photo-section">
             <h2 class="section-subtitle">Foto de perfil</h2>
-            <div class="photo-area" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 1rem;">
+            <div class="photo-area">
                 <div class="photo-placeholder">
                     {% if usuario.picture %}
                         <img src="{{ usuario.picture.url }}" alt="Foto de Perfil" class="profile-picture">
@@ -62,27 +62,33 @@
                 </div>
             </div>
         </section>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="{% url 'editar_perfil' %}" class="action-button">Editar Perfil</a>
+
+    <section class="configs-perfil">
+        <div>
+            <a href="{% url 'editar_perfil' %}" class="action-button-ed-perfil">Editar Perfil</a>
         </div>
-        <div class="info-field">
-            <a href="{% url 'logout' %}" class="action-button-perfil">Sair</a>
-       </div>
-       <div class="info-field" style="margin-top: 20px;">
+        <div class="info-field" style="margin-top: 20px;">
         {% if usuario.plano %}
-            <a href="{% url 'exibir_plano' %}" class="action-button">Exibir Plano</a>
+            <a href="{% url 'exibir_plano' %}" class="action-button-eb-plano">Exibir Plano</a>
         {% else %}
-            <a href="{% url 'criar_plano' %}" class="action-button">Criar Plano</a>
+            <a href="{% url 'criar_plano' %}" class="action-button-criar-pl">Criar Plano</a>
         {% endif %}
-    </div>
+    </div>    
+    </section>
+
+    <section class="configs-excluir-sair">
        <div class="info-field" style="margin-top: 20px; text-align: center;">
         <form action="{% url 'excluir_usuario' %}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta? Esta ação é irreversível.');">
             {% csrf_token %}
-            <button type="submit" style="width: 20%; font-size: 1.3em; padding: 10px; margin-top: 10px;"  class="action-button delete-button">Excluir usuario</button>
+            <button type="submit" class="delete-button-usuario">Excluir usuario</button>
         </form>
     </div>
-        {% endblock %}
+        <div class="info-field">
+            <a href="{% url 'logout' %}" class="action-button-sair-perfil">Sair</a>
+        </div>
+    </section>
     </main>
+    {% endblock %}
 
 </body>
 </html>
