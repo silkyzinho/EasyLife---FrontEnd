@@ -103,7 +103,7 @@ body {
     padding: 20px;
 }
 
-.button-primary-1, .button-secondary-1 {
+.button-primary-home, .button-secondary-home {
     display: inline-block;
     padding: 12px 20px;
     text-shadow:
@@ -113,10 +113,23 @@ body {
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
     font-family: 'Monstserrat', sans-serif;
     font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.button-primary-1 {
+.button-primary-home:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.228);
+}
+
+.button-secondary-home:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.228);
+}
+
+.button-primary-home {
     background: #053F3D;
+    transition: background 0.3s ease;
     color: #ffffff;
     border: 3px solid #ffffff;
     border-radius: 20px;
@@ -124,8 +137,9 @@ body {
     border-style: outset;
 }
 
-.button-secondary-1 {
+.button-secondary-home {
     background: #053F3D;
+    transition: background 0.3s ease;
     color: #ffffff;
     border: 3px solid #ffffff;
     border-radius: 20px;
@@ -905,6 +919,14 @@ body {
     font-size: xx-large; 
     padding: 10px 10px; 
     text-decoration: none;
+    margin-left: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.button-ir-historico:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.228);
 }
 
 /* Calculos BIXA */
@@ -972,19 +994,25 @@ body {
     0 0 20px #ffffff;
 }
 
-.button-primary-3 {
+.button-primary-cadastrar {
     width: 80%;
     padding: 10px;
-    font-size: 2rem;
+    font-size: x-large;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #053F3D;
-    background-color: #ffffff;
+    background: #ffffff;
     border-radius: 30px;
     cursor: pointer;
+    transition: transform 0.3s ease;
     border-style: outset;
     box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.5);
     border-color: #ffffff;
+}
+
+.button-primary-cadastrar:hover {
+    transform: scale(1.1);
+    background: rgb(199, 199, 199);
 }
 
 /* --- */
@@ -1041,7 +1069,7 @@ body {
     text-indent: 5px; /* Adiciona um recuo para o texto */
 }
 
-.button-secondary-3 {
+.button-secondary-cadastrar {
     width: 100%;
     padding: 10px;
     font-size: 2rem;
@@ -1055,9 +1083,15 @@ body {
     background: #053F3D;
     border-radius: 30px;
     cursor: pointer;
+    transition: transform 0.3s ease;
     box-shadow: 5px 4px 4px rgba(193, 193, 193, 0.71);
     border-style: outset;
     border-color: #ffffff;
+}
+
+.button-secondary-cadastrar:hover {
+    transform: scale(1.1);
+    background: rgb(199, 199, 199);
 }
 
 /* Responsividade(HEIN PROSTITUTA VEM AQUI) */
@@ -1182,13 +1216,11 @@ body {
     font-weight: bolder;
 }
 
-.button-primary-2, .button-secondary-2 {
+.button-primary-login, .button-secondary-login {
     padding: 12px 20px;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
-    border: none;
     border-radius: 20px;
-    cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     text-align: center;
@@ -1197,18 +1229,32 @@ body {
     0 0 5px #ffffff,
     0 0 10px #ffffff,
     0 0 20px #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.button-primary-2 {
+.button-primary-login:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.button-secondary-login:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.button-primary-login {
     background: #053F3D;
+    transition: transform 0.3s ease;
     color: #ffffff;
     border: 3px solid #ffffff;
     order: 1;
     border-style: outset;
 }
 
-.button-secondary-2 {
+.button-secondary-login {
     background: #053F3D;
+    transition: transform 0.3s ease;
     color: #ffffff;
     border: 3px solid #ffffff;
     order: 3;
@@ -1619,6 +1665,13 @@ body {
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
     border-style: outset;
     justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.no-category-button:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
 }
 
 .no-account-text-boas {
@@ -1628,7 +1681,7 @@ body {
     margin-bottom: 0px;
 }
 
-.action-button-boas {
+.action-button-sair-boas {
     padding: 10px 15px;
     font-size: x-large;
     color: #ffffff;
@@ -1640,7 +1693,14 @@ body {
     border: 3px solid #ffffff;
     border-radius: 10px;
     text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
+.action-button-sair-boas:hover {
+    background: rgba(199, 199, 199);
+}
+
 
 .options-button {
     padding: 10px 35px;
@@ -1695,10 +1755,19 @@ body {
     text-decoration: none;
     font-size: x-large;
     padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Casa */
+
+.category-button-casa:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 .category-button-educacao { 
     background: #053F3D;
@@ -1715,7 +1784,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Educação */
+
+.category-button-educacao:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 .category-button-alimentacao { 
     background: #053F3D; 
@@ -1732,7 +1808,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Alimentação*/
+
+.category-button-alimentacao:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 .category-button-extras { 
     background: #053F3D;
@@ -1749,7 +1832,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Extras */
+
+.category-button-extras:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 .category-button-saude-beleza { 
     background: #053F3D;
@@ -1766,7 +1856,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Sáude e Beleza */
+
+.category-button-saude-beleza:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 .category-button-comparar { 
     background: #053F3D;
@@ -1783,7 +1880,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Comparar */
+
+.category-button-comparar:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 .category-button-transporte { 
     background: #053F3D; 
@@ -1800,7 +1904,14 @@ body {
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 } /* Transporte */
+
+.category-button-transporte:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
+}
 
 /* Responsividade ( BOAS VINDAS TICA) */
 @media (max-width: 400px) {
