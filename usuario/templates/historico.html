@@ -9,7 +9,7 @@
 <body>
     {% block header %}
     <header class="header-history">
-        <a href="#" class="back-button">←</a>
+        <a href="{% url 'boas_vindas' %}" class="back-button-historico">←</a>
         <h1 class="history-title">HISTÓRICO</h1>
     </header>
     {% endblock %}
@@ -19,11 +19,11 @@
         <div class="top-controls">
             <button class="control-button select-button">
                 SELECIONAR
-                <span class="icon">✓</span>
+                <span class="icon-historico-sl"></span>
             </button>
             <button class="control-button delete-button">
                 EXCLUIR
-                <span class="icon">ⓧ</span>
+                <span class="icon-historico-ex"></span>
             </button>
         </div>
 

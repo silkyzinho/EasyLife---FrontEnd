@@ -311,26 +311,33 @@ body {
     align-items: center;
     padding: 20px;
     position: relative;
+    left: 35px;
+    top: -130px;
 }
 
-.back-button {
+.back-button-historico {
     position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: -10px;
+    left: -60px;
+    font-size: xxx-large;
     text-decoration: none;
-    font-size: 2rem;
-    color: #99dda5;
+    color: #ffffff;
 }
 
 .history-title {
-    font-size: 2rem;
-    color: #fff;
-    padding: 10px 30px;
-    background: linear-gradient(to right, #6a82fb, #4a90e2);
+    font-size: xxx-large;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    font-weight: 500;
+    background: linear-gradient(to right, #053F3D, #a3b88d);
+    padding: 10px 20px;
+    border: 5px solid #ffffff;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-style: outset;
+    display: inline-block;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /* --- */
@@ -341,6 +348,8 @@ body {
     display: inline-block;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
+    top: -90px;
 }
 
 /* --- */
@@ -367,8 +376,12 @@ body {
 }
 
 .select-button {
-    background: #739d73;
+    background: #053F3D;
+    color: #ffffff;
     margin-right: 10px;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    font-size: larger;
+    font-weight: 500;
 }
 
 .delete-button {
@@ -454,11 +467,29 @@ body {
     position: relative;
 }
 
-.back-button {
-    font-size: 2rem;
+.back-button-comparar {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    font-size: xxx-large;
     text-decoration: none;
     color: #ffffff;
-    margin-right: 20px;
+}
+
+.compare-title {
+    font-size: xxx-large;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    font-weight: 500;
+    background: linear-gradient(to right, #053F3D, #a3b88d);
+    padding: 10px 20px;
+    border: 5px solid #ffffff;
+    border-radius: 20px;
+    border-style: outset;
+    display: inline-block;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .compare-button {
@@ -922,6 +953,7 @@ body {
     margin-left: 30px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .button-ir-historico:hover {
@@ -1263,6 +1295,82 @@ body {
 
 /* LOGIN OH DENISE SAI DA LIVE FILHA FIM */
 
+.profile-container-ed-perfil {
+    display: flex;
+    background: #ffffff;
+    flex-direction: column;
+    border: 3px solid #053f3d;
+    border-radius: 20px;
+    
+}
+
+.profile-title-ed-perfil {
+    font-size: xxx-large;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    font-weight: 500;
+    background: linear-gradient(to right, #053F3D, #a3b88d);
+    padding: 10px 20px;
+    border: 5px solid #ffffff;
+    border-radius: 20px;
+    border-style: outset;
+    display: inline-block;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+    margin-top: -100px;
+
+    
+}
+
+.back-button-ed-perfil {
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: none;
+    font-size: xxx-large;
+    position: absolute;
+    left: 30px;
+    top: 5px;
+}
+
+.info-field-ed-perfil {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.info-field-ed-perfil label {
+    font-size: large;
+    color: #053F3D;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+
+.button-al-ed-perfil {
+    background: #053F3D;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    border: 3px solid #ffffff;
+    border-style: outset;
+    border-radius: 20px;
+    font-size: x-large;
+    text-align: center; 
+    margin-bottom: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.button-al-ed-perfil:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199)
+}
+
+
 /* PERFIL FULANO DE TOWN */
 
 /* Container principal */
@@ -1345,7 +1453,7 @@ body {
     box-shadow:
     0 0 5px #ffffff,
     0 0 10px #ffffff;
-    margin-left: 120px;
+    margin-left: 130px;
 }
 
 .photo-placeholder svg {
@@ -1367,10 +1475,17 @@ body {
     0 0 5px #ffffff,
     0 0 10px #ffffff;
     font-weight: 500;
+    font-size: large;
     border: 4px solid #ffffff;
     padding: 10px;
     border-radius: 15px;
     border-style: outset;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.action-button-foto-AL:hover {
+    background: rgba(199, 199, 199)
 }
 
 .action-button-foto-RE {
@@ -1460,7 +1575,14 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: x-large;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
+
+.action-button-ed-perfil:hover {
+    background: rgba(199, 199, 199);
+}
+
 
 .action-button-sair-perfil {
     padding: 10px 15px;
@@ -1473,12 +1595,18 @@ body {
     border-radius: 10px;
     text-decoration: none;
     border-style: outset;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.action-button-sair-perfil:hover {
+    background: rgba(199, 199, 199);
 }
 
 .configs-perfil {
     display: flex;
-    align-items: center;
-    justify-content:space-evenly
+    align-items: baseline;
+    justify-content: space-evenly;
 }
 
 .action-button-criar-pl {
@@ -1493,18 +1621,17 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: x-large;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.configs-excluir-sair {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.action-button-criar-pl:hover {
+    background: rgba(199, 199, 199);
 }
 
 .delete-button-usuario {
     font-size: x-large;
     padding: 10px;
-    margin-top: 10px;
     color: #ffffff;
     background: #053f3d;
     border: 4px solid #ffffff;
@@ -1514,6 +1641,11 @@ body {
     text-shadow: 
     0 0 5px #ffffff, 
     0 0 10px #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.delete-button-usuario:hover {
+    background: rgba(199, 199, 199);
 }
 
 /* Responsividade(PERFIL FULANO DE TOWN) */

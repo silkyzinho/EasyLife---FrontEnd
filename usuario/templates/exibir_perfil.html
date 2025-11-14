@@ -67,17 +67,15 @@
         <div>
             <a href="{% url 'editar_perfil' %}" class="action-button-ed-perfil">Editar Perfil</a>
         </div>
-        <div class="info-field" style="margin-top: 20px;">
+        <div class="info-field">
         {% if usuario.plano %}
             <a href="{% url 'exibir_plano' %}" class="action-button-eb-plano">Exibir Plano</a>
         {% else %}
             <a href="{% url 'criar_plano' %}" class="action-button-criar-pl">Criar Plano</a>
         {% endif %}
     </div>    
-    </section>
-
-    <section class="configs-excluir-sair">
-       <div class="info-field" style="margin-top: 20px; text-align: center;">
+    
+       <div class="info-field">
         <form action="{% url 'excluir_usuario' %}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta? Esta ação é irreversível.');">
             {% csrf_token %}
             <button type="submit" class="delete-button-usuario">Excluir usuario</button>
