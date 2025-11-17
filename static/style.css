@@ -276,7 +276,25 @@ body {
 .piggy-image-home {
     width: 220px;
     height: auto;
+    opacity: 0;
+    transform: translateY(20px);    
+    animation: aparecer 1s ease forwards;
 }
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito no hover: leve brilho */
+.piggy-image-home:hover {
+  box-shadow: 0 0 15px #fff;
+  transform: scale(1.08);
+  transition: 0.3s;
+}
+
 
 /* Estilos para a caixa de texto inferior */
 .content-box-1 {
@@ -317,7 +335,7 @@ body {
 
 .back-button-historico {
     position: absolute;
-    top: -10px;
+    top: -40px;
     left: -60px;
     font-size: xxx-large;
     text-decoration: none;
@@ -356,37 +374,51 @@ body {
 /* Estilos dos botões de controle */
 .top-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
+    padding: 10px;
+    border: 3px solid #ffffff;
+    border-radius: 20px;
 }
 
 .control-button {
-    flex: 1;
     padding: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    border: none;
+    font-size: larger;
+    font-weight: 500;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    border-style: outset;
     cursor: pointer;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .select-button {
     background: #053F3D;
-    color: #ffffff;
     margin-right: 10px;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
-    font-size: larger;
-    font-weight: 500;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;;
+    transition: transform 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.select-button:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199)
 }
 
 .delete-button {
-    background: #a9dcae;
-    margin-left: 10px;
+    background: #053F3D;
+    margin-right: 10px;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    transition: transform 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.delete-button:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199)
 }
 
 .control-button .icon {
@@ -397,22 +429,30 @@ body {
 /* --- */
 /* Estilos da lista de histórico */
 .history-list {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #ffffff;
+    border: 3px solid #053f3d;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
 .history-header, .history-item {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    border-bottom: 1px solid #eee;
+    border: 3px solid #053f3d;
+    border-style: dashed;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.aviso-historico {
+    text-decoration: none;
 }
 
 .history-header {
     font-weight: bold;
-    color: #92dead;
+    color: #053F3D;
     text-transform: uppercase;
 }
 
@@ -461,10 +501,10 @@ body {
     width: 100%;
     max-width: 600px;
     display: inline-block;
-    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     position: relative;
+    top: -230px;
 }
 
 .back-button-comparar {
@@ -653,10 +693,13 @@ body {
     padding: 20px;
 }
 
-.back-button {
-    font-size: 2rem;
+.back-button-calculos {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    font-size: xxx-large;
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
 }
 
 .page-total {
@@ -954,6 +997,7 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease;
     transition: background 0.3s ease;
+    border-style: outset;
 }
 
 .button-ir-historico:hover {
@@ -1002,7 +1046,19 @@ body {
 
 .piggy-image-cadastrar {
     width: 200px;
-} 
+    height: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .login-title-cadastrar {
     font-size: xxx-large;
@@ -1757,6 +1813,16 @@ body {
 .piggy-image-boas {
     width: 220px;
     height: auto;
+    opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .icone-perfil {
@@ -2050,4 +2116,79 @@ body {
     .category-buttons-grid {
         grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
     }
+}
+
+/* CRIAR PLANO  */
+
+.header-plano {
+    position: relative;
+    top: -230px;
+}
+
+.content-criar-plano {
+    width: 450px;
+    display: inline-block;
+    background: #ffffff;
+    border: 3px solid #053f3d;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    top: -100px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25)
+
+}
+
+.title-criar-plano {
+    font-size: xxx-large;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    font-weight: 500;
+    background: linear-gradient(to right, #053F3D, #a3b88d);
+    padding: 10px 20px;
+    border: 5px solid #ffffff;
+    border-radius: 20px;
+    border-style: outset;
+    display: inline-block;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.back-button-cr-pl {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: xxx-large;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.title-assinar {
+    color: #053F3D;
+    font-size: xx-large;
+}
+
+.button-success-assinar {
+    background: #053F3D;
+    border: 4px solid #ffffff;
+    color: #ffffff;
+    text-shadow:
+    0 0 5px #ffffff,
+    0 0 10px #ffffff;
+    font-family: 'Monstserrat', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: x-large;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-style: outset;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.button-success-assinar:hover {
+    transform: scale(1.1);
+    background: rgba(199, 199, 199);
 }

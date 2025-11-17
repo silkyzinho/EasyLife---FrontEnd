@@ -17,40 +17,41 @@
     {% block main %}
     <main class="main-content-history">
         <div class="top-controls">
-            <button class="control-button select-button">
-                SELECIONAR
-                <span class="icon-historico-sl"></span>
+            <form method="POST" action="" onsubmit="return confirm('Tem certeza que quer apagar todo o histórico? Essa açao é irreversivel');">
+            {% csrf_token %}
+            <button type="submit" class="control-button delete-button">
+            EXCLUIR HISTÓRICO
             </button>
-            <button class="control-button delete-button">
-                EXCLUIR
-                <span class="icon-historico-ex"></span>
-            </button>
+            </form>
         </div>
 
         <div class="history-list">
             <div class="history-header">
                 <span class="column-name">NOME</span>
                 <span class="column-date">DATA</span>
-                <span class="column-value">VALOR FINAL</span>
+                <span class="column-value">TOTAL DESPESAS</span>
+                <span class="column-value">SALARIO FINAL</span>
+                
             </div>
 
-            <div class="history-item">
-                <span class="item-name">NOME</span>
-                <span class="item-date">DATA</span>
-                <span class="item-value">VALOR FINAL</span>
-            </div>
-
-            <div class="history-item">
-                <span class="item-name">NOME</span>
-                <span class="item-date">DATA</span>
-                <span class="item-value">VALOR FINAL</span>
-            </div>
-
-            <div class="history-item">
-                <span class="item-name">NOME</span>
-                <span class="item-date">DATA</span>
-                <span class="item-value">VALOR FINAL</span>
-            </div>
+            {% for calculo in calculos %}
+                <a href="#" class="history-item-link"> {# Link para detalhes futuros #}
+                    <div class="history-item">
+                        <span class="item-name">Cálculo de {{ calculo.data_criacao|date:"d/m/Y" }}</span>
+                        <span class="item-date">{{ calculo.data_criacao|date:"d/m/Y" }}</span>
+                        <span class="item-value {% if calculo.total_despesas > 0 %}text-success{% else %}text-danger{% endif %}">
+                            R$ {{ calculo.total_despesas|floatformat:2 }}</span>
+                        <span class="item-value {% if calculo.resultado_final > 0 %}text-success{% else %}text-danger{% endif %}">
+                            R$ {{ calculo.resultado_final|floatformat:2 }}</span>
+                        
+                    </div>
+                </a>
+            {% empty %}
+                <div class="history-item-empty">
+                    <p>Você ainda não possui cálculos salvos.</p>
+                    <a href="{% url 'calculos' %}" class="aviso-historico">Clique aqui para fazer o primeiro!</a>
+                </div>
+            {% endfor %}
 
             </div>
     </main>

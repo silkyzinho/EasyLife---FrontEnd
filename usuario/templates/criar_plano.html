@@ -2,32 +2,29 @@
 {% load static %}
 
 {% block head %}
-    <title>Criar Novo Plano</title>
+    <title>Criar Plano</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+{% endblock %}
+
+{% block header%}
+    <header class="header-plano">
+    <a href="{% url 'exibir_perfil' %}" class="back-button-cr-pl">←</a>
+    <h1 class="title-criar-plano">PLANO</h1>
+    </header>
 {% endblock %}
 
 {% block main %}
-    <main>
-        <a href="{% url 'exibir_perfil' %}" class="back-button">←</a>
-        <div class="info-field">
-            <label for="nome">Nome:</label>
-            <div class="input-and-button">
-                <input type="nome" id="nome" name="nome" value="plano: EasyLife" disabled>
-            </div>
-        </div>
-        <div class="info-field">
-            <label for="valor">Valor:</label>
-            <div class="input-and-button">
-                <input type="nome" id="nome" name="nome" value="$10,00" disabled>
-            </div>
-        </div>
-        <div class="info-field">
-            <label for="prazo">Prazo:</label>
-            <div class="input-and-button">
-                <input type="nome" id="nome" name="nome" value="1 mês" disabled>
-            </div>
-        </div>
-        <button type="submit">Confirmar</button>
+    <main class="content-criar-plano">
+    
+    <h2 class="title-assinar">Assinar o plano {{ plano.nome }}</h2>
+
+    <p><strong>Valor:</strong> R$ {{ plano.valor }}</p>
+    <p><strong>Prazo:</strong> Ate {{ plano.prazo }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="button-success-assinar">Assinar Plano</button>
     </form>
-</main>
+    </main>
 {% endblock %}
