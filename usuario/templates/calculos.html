@@ -52,12 +52,16 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <div class="chart-placeholder"></div>
+                        <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                            <li>■ Aluguel</li>
-                            <li>■ Contas Fixas</li>
-                            <li>■ Serviços</li>
-                            <li>■ Outros</li>
+                            <li>Aluguel</li>
+                            <li>Água</li>
+                            <li>Luz</li>
+                            <li>Gás</li>
+                            <li>Internet</li>
+                            <li>Telefone</li>
+                            <li>Serviços e Prestações</li>
+                            <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -84,14 +88,14 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <div class="chart-placeholder"></div>
+                        <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                            <li>■ Mercado</li>
-                            <li>■ Fora de Casa</li>
-                            <li>■ Happy Hour</li>
-                            <li>■ Padaria</li>
-                            <li>■ Açougueiro</li>
-                            <li>■ Outros</li>
+                            <li>Mercado</li>
+                            <li>Fora de Casa</li>
+                            <li>Hort Frut</li>
+                            <li>Padaria</li>
+                            <li>Açougueiro</li>
+                            <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -119,14 +123,14 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <div class="chart-placeholder"></div>
+                        <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                            <li>■ Transporte público</li>
-                            <li>■ Gasolina</li>
-                            <li>■ Manutenção</li>
-                            <li>■ Seguro</li>
-                            <li>■ App de transporte</li>
-                            <li>■ Outros</li>
+                            <li>Transporte público</li>
+                            <li>Gasolina</li>
+                            <li>Manutenção</li>
+                            <li>Seguro</li>
+                            <li>Táxi/App</li>
+                            <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -157,13 +161,13 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <div class="chart-placeholder"></div>
+                        <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                           <li>■ Remédios</li>
-                           <li>■ Plano de Saúde</li>
-                           <li>■ Produtos de higiene</li>
-                           <li>■ Cuidados Pessoais</li>
-                           <li>■ Outros</li>
+                           <li>Remédios</li>
+                           <li>Plano de Saúde</li>
+                           <li>Produtos de higiene</li>
+                           <li>Cuidados Pessoais</li>
+                           <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -187,11 +191,11 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <div class="chart-placeholder"></div>
+                        <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                            <li>■ Mensalidade</li>
-                            <li>■ Cursos</li>
-                            <li>■ Outros</li>
+                            <li>Mensalidade</li>
+                            <li>Cursos</li>
+                            <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -222,14 +226,14 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <div class="chart-placeholder"></div>
+                        <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                            <li>■ Viagens</li>
-                            <li>■ Roupas</li>
-                            <li>■ Lazer</li>
-                            <li>■ Presentes</li>
-                            <li>■ Animais</li>
-                            <li>■ Outros</li>
+                            <li>Viagens</li>
+                            <li>Roupas</li>
+                            <li>Lazer</li>
+                            <li>Presentes</li>
+                            <li>Animais</li>
+                            <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -237,7 +241,7 @@
             </div>
         </div>
         <div class="section">
-            <div class="card" style="text-align: center;">
+            <div class="card">
                 <button type="submit" class="calculate-btn">Calcular Resultado Final</button>
                 <div class="total-cost">TOTAL DE DESPESAS: R$ {{ total_despesas|floatformat:2|default:'0,00' }}</div>
                 <div class="total-cost">SALARIO RESTANTE: R$ {{ resultado|floatformat:2|default:'0,00' }}</div>
