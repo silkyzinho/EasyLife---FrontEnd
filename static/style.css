@@ -102,6 +102,13 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    transform: translateY(20px);    
+    animation: aparecer 2s ease forwards;
+}
+
+.body:hover {
+  transform: scale(1.08);
+  transition: 0.3s;
 }
 
 .button-primary-home, .button-secondary-home {
@@ -170,6 +177,13 @@ body {
     0 0 10px #ffffff,
     0 0 20px #ffffff;
     animation: piscaNeon 1.5s infinite;
+    transform: translateY(20px);    
+    animation: aparecer 1s ease forwards;
+}
+
+.header-title:hover {
+  transform: scale(1.08);
+  transition: 0.3s;
 }
 
 .header-nav .nav-button {
@@ -269,6 +283,13 @@ body {
     color: #053F3D;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 5px;
+    transform: translateY(20px);    
+    animation: aparecer 1s ease forwards;
+}
+
+.subtitle-2:hover {
+  transform: scale(1.08);
+  transition: 0.3s;
 }
 
 .piggy-image-home {
@@ -1726,6 +1747,13 @@ body {
     0 0 5px #ffffff,
     0 0 10px #ffffff,
     0 0 20px #ffffff;
+    transform: translateY(20px);    
+    animation: aparecer 2s ease forwards;
+}
+
+.bem-vindo-let:hover {
+  transform: scale(1.08);
+  transition: 0.3s;
 }
 
 .user-greeting {
@@ -1792,6 +1820,13 @@ body {
     font-weight: 700;
     color: #053F3D;
     margin-top: 5px;
+    transform: translateY(20px);    
+    animation: aparecer 2s ease forwards;
+}
+
+.subtitle:hover {
+  transform: scale(1.08);
+  transition: 0.3s;
 }
 
 .piggy-image-boas {
@@ -1876,6 +1911,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s ease;
+    border-style: outset;
 }
 
 .action-button-sair-boas:hover {
