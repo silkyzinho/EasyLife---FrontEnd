@@ -15,7 +15,7 @@
         <div class="section">
             <h2 class="section-title">SALÁRIO</h2>
             <div class="card">
-                <h3 class="title-carteira">CARTEIRA WALLET</h3>
+                <h3 class="title-carteira">CARTEIRA</h3>
                 <div class="form-inputs">
                     <label class="infos-carteiras">Salário:</label>
                     <input type="number" step="0.01" name="salario" placeholder="R$ 0,00" value="{{ salario|default_if_none:'' }}">
@@ -150,11 +150,11 @@
                         <input type="number" step="0.01" name="plano" placeholder="R$ 0,00" value="{{ plano|default_if_none:'' }}">
                         <label>Exames:</label>
                         <input type="number" step="0.01" name="exames" placeholder="R$ 0,00" value="{{ exames|default_if_none:'' }}">
-                        <label>Produtos:</label>
+                        <label>Produtos de higiene:</label>
                         <input type="number" step="0.01" name="produtos" placeholder="R$ 0,00" value="{{ produtos|default_if_none:'' }}">
                         <label>Academia:</label>
                         <input type="number" step="0.01" name="academia" placeholder="R$ 0,00" value="{{ academia|default_if_none:'' }}">
-                        <label>Salão:</label>
+                        <label>Salão de Beleza:</label>
                         <input type="number" step="0.01" name="salao" placeholder="R$ 0,00" value="{{ salao|default_if_none:'' }}">
                         <label>Outros:</label>
                         <input type="number" step="0.01" name="outros_saude_e_beleza" placeholder="R$ 0,00" value="{{ outros_saude_e_beleza|default_if_none:'' }}">
@@ -163,10 +163,12 @@
                         <h3>ESTATÍSTICAS</h3>
                         <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
-                           <li>Remédios</li>
+                           <li>Farmácia</li>
                            <li>Plano de Saúde</li>
+                           <li>Exames</li>
                            <li>Produtos de higiene</li>
-                           <li>Cuidados Pessoais</li>
+                           <li>Academia</li>
+                           <li>Salão de Beleza</li>
                            <li>Outros</li>
                         </ul>
                     </div>
@@ -194,6 +196,7 @@
                         <canvas class="chart-placeholder"></canvas>
                         <ul class="legend">
                             <li>Mensalidade</li>
+                            <li>Material Escolar</li>
                             <li>Cursos</li>
                             <li>Outros</li>
                         </ul>
@@ -230,7 +233,9 @@
                         <ul class="legend">
                             <li>Viagens</li>
                             <li>Roupas</li>
-                            <li>Lazer</li>
+                            <li>Cinema</li>
+                            <li>Shows</li>
+                            <li>Festas</li>
                             <li>Presentes</li>
                             <li>Animais</li>
                             <li>Outros</li>

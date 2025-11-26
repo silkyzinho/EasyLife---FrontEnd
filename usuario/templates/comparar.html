@@ -1,7 +1,6 @@
 {% extends 'base.html' %}    
 {% load static %}
 
-
 {% block head %}
     <title>Easy Life - Comparar</title>
     <link rel="stylesheet" href="styles.css"> 
@@ -14,12 +13,13 @@
             COMPARAR
             <span class="icon"></span>
         </h2>
+        <a href="{% url 'boas_vindas' %}" class="back-button-comparar">←</a>
     </header>
     {% endblock%}
 
     <main class="main-content-compare">
         {% block main %}
-        <a href="{% url 'boas_vindas' %}" class="back-button-comparar">←</a>
+        
         <section class="chart-section">
                 <h2 class="details-title">Valores e Gastos</h2>
             </div>
