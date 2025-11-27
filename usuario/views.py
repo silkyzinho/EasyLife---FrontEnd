@@ -11,6 +11,12 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 def home_view(request):
     return render(request, 'home.html')
 
+def relatorio_abnt(request):
+    context = {
+        'titulo': 'oiiiiii',
+    }
+    return render(request, 'relatorio_abnt.html', context)
+
 # usuario 
 
 def cadastrar(request):

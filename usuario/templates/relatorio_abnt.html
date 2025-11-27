@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>Política de Privacidade - Calculadora de Gastos</title>
+  <link rel="stylesheet" href="{% static 'privacy.js' %}">
+
+{% endblock %}
+
+{% block main %}
+<main class="privacy-container">
+  <article class="privacy-card" role="article" aria-labelledby="privacy-title">
+    <header>
+      <h1 id="privacy-title">Política de Privacidade da Calculadora de Gastos</h1>
+      <p class="sub">Atualizada sempre que necessário — LGPD (Lei n° 13.709/2018)</p>  
+      <a href="{% url 'boas_vindas' %}" class="back-button-abnt">←</a>
+    </header>
+
+    <section class="privacy-section" id="dados-coletados">
+      <h2>Que dados coletamos?</h2>
+      <p>Coletamos apenas as informações necessárias para o funcionamento do site:</p>
+      <ul>
+        <p>Nome, e-mail e senha de login;</p>
+        <p>Valores de gastos mensais inseridos pelo usuário (como compras do mês, contas e lazer).</p>
+      </ul>
+    </section>
+
+    <section class="privacy-section" id="porque">
+      <h2>Por que coletamos esses dados?</h2>
+      <ul>
+        <p>Para permitir que o usuário acesse sua conta com segurança;</p>
+        <p>Para salvar os registros de gastos e permitir comparações futuras;</p>
+        <p> Para melhorar a experiência de uso da calculadora.</p>
+      </ul>
+    </section>
+
+    <section class="privacy-section" id="compartilhamento">
+      <h2>Compartilhamos esses dados com alguém?</h2>
+      <p>Não. Os dados informados não serão compartilhados, vendidos ou alugados com terceiros. Apenas em caso de exigência legal poderemos fornecer informações às autoridades competentes.</p>
+    </section>
+
+    <section class="privacy-section" id="armazenamento">
+      <h2>Como seus dados ficam armazenados?</h2>
+      <ul>
+        <p>Os dados são guardados em ambiente seguro;</p>
+        <p>As senhas são criptografadas;</p>
+        <p>Apenas o próprio usuário pode acessar seus gastos salvos.</p>
+      </ul>
+    </section>
+
+    <section class="privacy-section" id="exclusao">
+      <h2>Posso pedir para excluir meus dados?</h2>
+      <p>Sim. O usuário pode solicitar a exclusão da conta e de todos os seus dados pessoais em qualquer momento.</p>
+    </section>
+
+    <section class="privacy-section" id="direitos">
+      <h2>Quais são os meus direitos?</h2>
+      <p>De acordo com a LGPD (Lei n° 13.709/2018), o usuário pode:</p>
+      <ul>
+        <p>Consultar quais dados possui cadastrados;</p>
+        <p>Corrigir informações;</p>
+        <p>Solicitar exclusão da conta;</p>
+        <p>Retirar seu consentimento de uso dos dados.</p>
+      </ul>
+    </section>
+
+    <section class="privacy-section" id="mudancas">
+      <h2>Esta política pode mudar?</h2>
+      <p>Sim. Caso novas funcionalidades sejam adicionadas ao site, a política será atualizada para refletir essas mudanças.</p>
+    </section>
+
+    <section class="privacy-section" id="contato">
+      <h2>Como entrar em contato?</h2>
+      <p>Em caso de dúvidas, pedidos de exclusão ou qualquer questão sobre seus dados pessoais, envie uma mensagem para:</p>
+      <p class="email"><a href="mailto:easylife123@gmail.com">easylife123@gmail.com</a></p>
+    </section>
+
+    <footer class="privacy-footer">
+      <p>Última atualização: <time datetime="{{ last_update }}">27 de novembro de 2025</time></p>
+    </footer>
+  </article>
+</main>
+
+<script src="{% static 'privacy.js' %}"></script>
+
+{% endblock %}
