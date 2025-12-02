@@ -24,9 +24,9 @@
 }
 
 .logo-banner {
-    padding: 20px;
+    padding: 20px 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -341,10 +341,11 @@ body {
     background-color: #053F3D;
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
     color: #ffffff;
-    padding: 15px 0;
+    padding: 20px 0;
     position: fixed;
     font-family: 'Monstserrat', sans-serif;
     width: 100%;
+    margin-top: 20px;
 }
 
 
@@ -364,8 +365,8 @@ body {
 
 .back-button-historico {
     position: absolute;
-    top: -40px;
-    left: -330px;
+    top: 50px;
+    left: -10px;
     font-size: xxx-large;
     text-decoration: none;
     color: #ffffff;
@@ -383,8 +384,10 @@ body {
     border-style: outset;
     display: inline-block;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
-    margin-top: 0px;
+    margin-top: 50px;
     margin-bottom: 0px;
+    position: sticky;
+    left: 540px;
 }
 
 .main-content-history {
@@ -456,6 +459,7 @@ body {
     border: 3px solid #053f3d;
     border-radius: 10px;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+    margin-bottom: 130px;
 }
 
 .history-header, .history-item {
@@ -946,8 +950,8 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-image: conic-gradient(#3498db 0% 30%, #e74c3c 30% 55%, #f1c40f 55% 80%, #2ecc71 80% 100%);
-    border: 3px solid #053F3D;
+    background-image: conic-gradient(#73c8a9 0% 30%, #373b44 30% 55%, #bd5532 55% 80%, #e1b866 80% 100%);
+    border: 2px solid #053F3D;
     margin: 0 auto; 
 }
 .legend {
@@ -961,7 +965,7 @@ body {
 
 .legend li {
     font-size: 14px;
-    color: #333;
+    color: #053F3D;
     margin-bottom: 6px;
     display: flex;
     align-items: center;
@@ -1241,6 +1245,7 @@ body {
     max-width: 700px;
     text-align: center;
     padding: 20px;
+    padding-bottom: 60px;
     display: inline-block;
     align-items: center;
     align-content: center;
@@ -1395,6 +1400,10 @@ body {
     flex-direction: column;
     border: 3px solid #053f3d;
     border-radius: 20px;
+    width: 45%;
+    left: 390px;
+    position: sticky;
+    margin-bottom: 95px;
     
 }
 
@@ -1410,9 +1419,9 @@ body {
     border-style: outset;
     display: inline-block;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
-    margin-top: -100px;
-
-    
+    position: sticky;
+    bottom: -290px;
+    margin-bottom: 35px;
 }
 
 .back-button-ed-perfil {
@@ -2175,6 +2184,7 @@ padding: 10px 15px;
 }
 
 
+
 /* Responsividade ( BOAS VINDAS TICA) */
 @media (max-width: 400px) {
     .category-buttons-grid {
@@ -2198,7 +2208,8 @@ padding: 10px 15px;
     border-radius: 20px;
     position: relative;
     top: -100px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25)
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+    margin-bottom: 250px;
 
 }
 
@@ -2214,14 +2225,14 @@ padding: 10px 15px;
     border-style: outset;
     display: inline-block;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
-    margin-top: 0px;
+    margin-top: 190px;
     margin-bottom: 0px;
 }
 
 .back-button-cr-pl {
     position: absolute;
-    top: -20px;
-    left: -300px;
+    top: 10px;
+    left: 30px;
     font-size: xxx-large;
     text-decoration: none;
     color: #ffffff;

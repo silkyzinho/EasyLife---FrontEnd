@@ -52,7 +52,7 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <canvas class="chart-placeholder"></canvas>
+                        <div class="chart-placeholder"></div>
                         <ul class="legend">
                             <li>Aluguel</li>
                             <li>Água</li>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <canvas class="chart-placeholder"></canvas>
+                        <div class="chart-placeholder"></div>
                         <ul class="legend">
                             <li>Mercado</li>
                             <li>Fora de Casa</li>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <canvas class="chart-placeholder"></canvas>
+                        <div class="chart-placeholder"></div>
                         <ul class="legend">
                             <li>Transporte público</li>
                             <li>Gasolina</li>
@@ -161,15 +161,14 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <canvas class="chart-placeholder"></canvas>
+                        <div class="chart-placeholder"></div>
                         <ul class="legend">
-                           <li>Farmácia</li>
-                           <li>Plano de Saúde</li>
-                           <li>Exames</li>
-                           <li>Produtos de higiene</li>
-                           <li>Academia</li>
-                           <li>Salão de Beleza</li>
-                           <li>Outros</li>
+                            <li>Mercado</li>
+                            <li>Fora de Casa</li>
+                            <li>Hort Frut</li>
+                            <li>Padaria</li>
+                            <li>Açougueiro</li>
+                            <li>Outros</li>
                         </ul>
                     </div>
                 </div>
@@ -193,10 +192,9 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <canvas class="chart-placeholder"></canvas>
+                        <div class="chart-placeholder"></div>
                         <ul class="legend">
                             <li>Mensalidade</li>
-                            <li>Material Escolar</li>
                             <li>Cursos</li>
                             <li>Outros</li>
                         </ul>
@@ -229,13 +227,11 @@
                     </div>
                     <div class="stats">
                         <h3>ESTATÍSTICAS</h3>
-                        <canvas class="chart-placeholder"></canvas>
+                        <div class="chart-placeholder"></div>
                         <ul class="legend">
                             <li>Viagens</li>
                             <li>Roupas</li>
-                            <li>Cinema</li>
-                            <li>Shows</li>
-                            <li>Festas</li>
+                            <li>Lazer</li>
                             <li>Presentes</li>
                             <li>Animais</li>
                             <li>Outros</li>
@@ -258,4 +254,11 @@
     </div>
     </form>
 </main>
+
+<footer class="footer_base">
+    {% block footer %}
+    <p>© 2025 EasyLife — Todos os direitos reservados</p>
+    {% endblock %}
+        </footer>
+
 {% endblock %}
